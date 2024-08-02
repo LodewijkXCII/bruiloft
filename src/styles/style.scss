@@ -13,7 +13,7 @@
   --fs-500: clamp(1.1rem, calc(0.96rem + 0.81vw), 1.48rem);
   --fs-600: clamp(1.27rem, calc(0.92rem + 1.71vw), 2.25rem);
   --fs-700: clamp(1.42rem, calc(0.81rem + 3.06vw), 3.18rem);
-  --fs-800: clamp(4.5rem, calc(0.89rem + 6.04vw), 7.5rem);
+  --fs-800: clamp(2.5rem, calc(0.89rem + 6.04vw), 7.5rem);
   --fs-900: clamp(1.8rem, calc(0.22rem + 7.93vw), 6.36rem);
 }
 
@@ -95,6 +95,11 @@ strong {
   margin: auto;
 }
 
+@media (max-width: 50em) {
+  .brand-logo {
+    height: 150px;
+  }
+}
 .hr-line {
   height: 2px;
   width: 35%;
@@ -111,7 +116,7 @@ strong {
 }
 
 .save-the-date {
-  margin: 3rem 0;
+  margin: 4rem 0;
   align-content: center;
 
   > * {
@@ -131,5 +136,9 @@ strong {
 
   .wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .save-the-date {
+    margin: 1rem 0;
   }
 }
