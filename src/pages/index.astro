@@ -1,32 +1,129 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-import Countdown from "../components/Countdown.astro";
-
-import Logo from "../svg/logo.astro";
+import Riley from "../img/heart-529607_1280.jpg";
+import ProgramCard from "../components/ProgramCard.astro";
+import SigninForm from "../components/SigninFOrm.astro";
 ---
 
-<Layout title="Save the date!">
+<Layout title="Loek en Nicolien gaan trouwen!">
   <main>
-    <div class="wrapper">
+    <header class="wrapper">
       <div class="image">
         <img src="img/wedding.jpg" alt="" />
       </div>
       <div class="save-the-date">
-        <h1>Save the date</h1>
+        <h1>Loek<br />&<br />Nicolien</h1>
 
-        <img src="logo.svg" alt="" class="brand-logo" />
-        <p>Loek en Nicolien</p>
+        <div class="save-the-date--end">
+          <span class="hr-line"></span>
+          <h2>17.05.2025</h2>
+        </div>
+      </div>
+    </header>
 
-        <span class="hr-line"></span>
-        <h2 class="large">17.05.2025</h2>
+    <section id="informatie">
+      <div class="card">
+        <div class="card-text">
+          <div class="card-heading">
+            <h2>Informatie</h2>
+            <p class="text-subtle paars">Vier de liefde!</p>
+          </div>
+          <div class="card-body">
+            <p>
+              We’re thrilled to invite you to celebrate our wedding in the heart
+              of Friesland. Our website is your go-to source for all the
+              essential details, including the event schedule, venue
+              information, dress code, RSVP options, and travel arrangements. We
+              look forward to sharing this beautiful day with you and creating
+              unforgettable memories together!
+            </p>
+          </div>
+          <div class="card-footer">
+            <p>Meer informatie over:</p>
+            <ul>
+              <li><a href="">Programma</a></li>
+              <li><a href="#aanmelden">Aanmelden</a></li>
+              <li><a href="#thema">Thema</a></li>
+              <li><a href="#locatie">Locatie</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-image">
+          <Image src={Riley} alt="" />
+        </div>
+      </div>
+    </section>
 
-        <div class="countdown">
-          <Countdown />
+    <section id="aanmelden">
+      <div class="text">
+        <div class="block-title">
+          <h2 class="oranje">We horen graag of je erbij bent!</h2>
+          <p class="text-subtle paars">Vier met ons!</p>
+        </div>
+        <SigninForm />
+      </div>
+    </section>
+
+    <section id="thema" class="backdrop">
+      <div class="text backdrop-text">
+        <div class="block-title">
+          <h2>Thema</h2>
+          <p class="text-subtle oranje">Vier de vreugde!</p>
+        </div>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quos
+          rem laborum ducimus quod assumenda numquam inventore veritatis,
+          consequuntur, voluptatum voluptatem nulla nobis atque ipsa dolores
+          minus dolore asperiores dicta illo. Harum illo officiis at soluta
+          aspernatur eum reiciendis aperiam qui sed, consectetur dolore eius
+          provident autem beatae voluptatem suscipit, quidem modi ratione,
+          ducimus assumenda magni explicabo aliquam. In, suscipit?
+        </p>
+      </div>
+    </section>
+
+    <section id="locatie">
+      <div class="card">
+        <div class="card-text">
+          <div class="block-title">
+            <h2 class="oranje">Locatie</h2>
+            <p class="text-subtle paars">Vier het samenzijn!</p>
+          </div>
+          <p class="text-light">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quos
+            rem laborum ducimus quod assumenda numquam inventore veritatis,
+            consequuntur, voluptatum voluptatem nulla nobis atque ipsa dolores
+            minus dolore asperiores dicta illo. Harum illo officiis at soluta
+            aspernatur eum reiciendis aperiam qui sed, consectetur dolore eius
+            provident autem beatae voluptatem suscipit, quidem modi ratione,
+            ducimus assumenda magni explicabo aliquam. In, suscipit?
+          </p>
+        </div>
+        <div class="card-image">
+          <Image src={Riley} alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section id="programma">
+      <div class="text">
+        <div class="block-title">
+          <h2>Programma</h2>
+          <p class="text-subtle paars">Vier het geluk!</p>
         </div>
 
-        <p>Meer info volgt snel!</p>
+        <p>
+          Kom mee in onze bubbel en laat je heel de dag meenemen tot het einde
+          van avond. Het exacte programma laten we dus ook niet weten. Dit zijn
+          in hoofdlijnen het progamma.
+        </p>
+        <br />
+        <ProgramCard />
+        <ProgramCard />
+        <ProgramCard />
       </div>
-    </div>
+    </section>
   </main>
 </Layout>
