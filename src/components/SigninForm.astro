@@ -15,13 +15,24 @@
   <div class="input-wrapper">
     <label for="rsvp">Ben je erbij?</label>
     <select name="rsvp" id="rsvp">
+      <option value="select" disabled selected>Selecteer...</option>
       <option value="ja">ja</option>
       <option value="nee">nee</option>
       <option value="mischien">misschien</option>
     </select>
   </div>
   <div class="input-wrapper">
-    <label for="allergien">Allergien waar we rekening mee moeten houden?</label>
+    <label for="meal">Wil je het vlees of vis of vegatarisch menu?</label>
+    <select name="meal" id="meal">
+      <option value="select" disabled selected>Selecteer...</option>
+      <option value="Vlees">Vlees</option>
+      <option value="Vis">Vis</option>
+      <option value="Vega">Vegatarisch</option>
+    </select>
+  </div>
+  <div class="input-wrapper">
+    <label for="allergien">Allergieën waar we rekening mee moeten houden?</label
+    >
     <input type="text" name="allergien" id="allergien" />
   </div>
 
@@ -30,5 +41,5 @@
     <textarea name="opmerkingen" id="opmerkingen"></textarea>
   </div>
 
-  <div role="button">Aanmelden</div>
+  <div role="button" class="btn btn-secondary">Aanmelden</div>
 </form>

@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import Riley from "../img/heart-529607_1280.jpg";
 import ProgramCard from "../components/ProgramCard.astro";
 import SigninForm from "../components/SigninForm.astro";
+import FAQCard from "../components/FAQCard.astro";
 ---
 
 <Layout title="Loek en Nicolien gaan trouwen!">
@@ -43,7 +44,7 @@ import SigninForm from "../components/SigninForm.astro";
           <div class="card-footer">
             <p>Meer informatie over:</p>
             <ul>
-              <li><a href="">Programma</a></li>
+              <li><a href="#programma">Programma</a></li>
               <li><a href="#aanmelden">Aanmelden</a></li>
               <li><a href="#thema">Thema</a></li>
               <li><a href="#locatie">Locatie</a></li>
@@ -81,6 +82,11 @@ import SigninForm from "../components/SigninForm.astro";
           provident autem beatae voluptatem suscipit, quidem modi ratione,
           ducimus assumenda magni explicabo aliquam. In, suscipit?
         </p>
+        <a
+          href="https://pin.it/1KDGLpjst"
+          class="btn btn-primary"
+          target="_blank">Bekijk het Pinterest board</a
+        >
       </div>
     </section>
 
@@ -123,6 +129,56 @@ import SigninForm from "../components/SigninForm.astro";
         <ProgramCard />
         <ProgramCard />
         <ProgramCard />
+      </div>
+    </section>
+    <section id="faq">
+      <div class="text">
+        <div class="block-title">
+          <h2 class="oranje">Pratische informatie</h2>
+        </div>
+        <FAQCard
+          title="Speeches"
+          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester. Contactgegevens staan onderaan deze pagina."
+        />
+        <FAQCard
+          title="Parkeren"
+          body="Er is voldoende parkeergelegenheid bij onze trouwlocatie, dus kom gerust met de auto."
+        />
+        <FAQCard
+          title="Speeches"
+          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester. Contactgegevens staan onderaan deze pagina."
+        />
+      </div>
+    </section>
+
+    <section id="ceremonie" class="backdrop">
+      <div class="text backdrop-text">
+        <div class="block-title">
+          <h2>Ceremoniemeesters</h2>
+          <p class="text-subtle oranje">Vier de vreugde!</p>
+        </div>
+        <p>
+          Om alles op onze grote dag in goede banen te laten lopen hebben we
+          twee ceremoniemeesters gevraagd. Zij zullen het aanspreekpunt zijn van
+          de dag. Mocht je iets van tevoren willen weten, vraag het aan hen.
+        </p>
+
+        <div class="ceremoniemeesters">
+          <div class="person">
+            <h3 class="oranje">Danique Touw</h3>
+            <p>06-12345678</p>
+            <a href="mailto:bruiloftloekennicolien@gmail.com"
+              >bruiloftloekennicolien@gmail.com</a
+            >
+          </div>
+          <div class="person">
+            <h3 class="oranje">Art van Eeden Petersman</h3>
+            <p>06-12345678</p>
+            <a href="mailto:bruiloftloekennicolien@gmail.com"
+              >bruiloftloekennicolien@gmail.com</a
+            >
+          </div>
+        </div>
       </div>
     </section>
   </main>
