@@ -2,19 +2,29 @@
 
 ---
 
-<h3 id="countdown" class="countdown">
-  <div id="days"></div>
-  <div id="hours"></div>
-  <div id="minutes"></div>
-  <div id="seconds"></div>
-</h3>
+<article>
+  <div id="countdown" class="roze countdown">
+    <p id="days">110d</p>
+    <p id="hours">24u</p>
+    <p id="minutes">00m</p>
+    <p id="seconds">00s</p>
+  </div>
+</article>
 
 <style>
+  article {
+    text-align: center;
+  }
   .countdown {
-    /* display: grid;
-    grid-template-columns: repeat(4, 4ch); */
     max-width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* flex-direction: column; */
+    gap: 0.5rem;
     margin: auto;
+    p {
+      font-family: var(--ff-heading);
+    }
   }
 </style>
 
@@ -39,18 +49,19 @@
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Output the result in an element with id="countdown"
-    document.getElementById("countdown").innerHTML =
-      days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
+    // document.getElementById("countdown").innerHTML =
+    //   days + "d " + hours + "u " + minutes + "m " + seconds + "s ";
 
-    // document.getElementById("days").innerHTML = days + "<span>dagen</span>";
-    // document.getElementById("hours").innerHTML = hours + "uur";
-    // document.getElementById("minutes").innerHTML = minutes + "minuten";
-    // document.getElementById("seconds").innerHTML = seconds + "seconden";
+    document.getElementById("days").innerHTML = days + "d";
+    document.getElementById("hours").innerHTML = hours + "u";
+    document.getElementById("minutes").innerHTML = minutes + "m";
+    document.getElementById("seconds").innerHTML = seconds + "s";
 
     // If the count down is over, write some text
     if (distance < 0) {
       clearInterval(x);
-      document.getElementById("countdown").innerHTML = "EXPIRED";
+      document.getElementById("countdown").innerHTML =
+        "LOEK EN NICOLIEN ZIJN GETROUWD";
     }
   }, 1000);
 </script>

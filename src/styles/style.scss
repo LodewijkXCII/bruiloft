@@ -341,11 +341,15 @@ section {
   background-size: cover;
 
   .backdrop-text {
-    background-color: rgba(var(--rgb-paars), 0.3);
+    background-color: rgba(var(--rgb-roze), 0.3);
     border-radius: 2rem;
     backdrop-filter: blur(25px);
-
+    color: var(--clr-text-light);
     padding-top: 3rem;
+
+    a {
+      color: var(--clr-text-light);
+    }
   }
 }
 
@@ -370,5 +374,11 @@ section {
     height: 100%;
     background-color: var(--clr-roze);
     left: -15px;
+  }
+}
+
+@media (max-width: 50em) {
+  .ceremoniemeesters {
+    grid-template-columns: 1fr;
   }
 }
