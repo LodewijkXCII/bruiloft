@@ -26,8 +26,8 @@ import Countdown from "../components/Countdown.astro";
     </header>
 
     <section id="informatie">
+      <Countdown />
       <div class="card">
-        <Countdown />
         <div class="card-text">
           <div class="card-heading">
             <h2>Informatie</h2>
@@ -92,7 +92,7 @@ import Countdown from "../components/Countdown.astro";
       </div>
     </section>
 
-    <!-- <section id="locatie">
+    <section id="locatie">
       <div class="card">
         <div class="card-text">
           <div class="block-title">
@@ -113,8 +113,8 @@ import Countdown from "../components/Countdown.astro";
           <Image src={Riley} alt="" />
         </div>
       </div>
-    </section> -->
-    <!-- 
+    </section>
+
     <section id="programma">
       <div class="text">
         <div class="block-title">
@@ -128,19 +128,31 @@ import Countdown from "../components/Countdown.astro";
           in hoofdlijnen het progamma.
         </p>
         <br />
-        <ProgramCard />
-        <ProgramCard />
-        <ProgramCard />
+        <ProgramCard
+          time="13:30"
+          title="Ontvangst"
+          text="Ontvangst is inclusief koffie, thee en een kleine versnapering. Let op, er zal geen lunch zijn."
+        />
+        <ProgramCard
+          time="14:00"
+          title="Ceremonie"
+          text="De dag gaat dan echt beginnen. Vanaf de ceremonie zal je meegenomen worden in de rest van de dag."
+        />
+        <ProgramCard
+          time="01:00"
+          title="Afsluiting"
+          text="Aan alles komt een eind. Zo ook de bruiloft. We hopen dat je een top dag hebt gehad!"
+        />
       </div>
-    </section> -->
-    <!-- <section id="faq">
+    </section>
+    <section id="faq">
       <div class="text">
         <div class="block-title">
           <h2 class="oranje">Pratische informatie</h2>
         </div>
         <FAQCard
           title="Speeches"
-          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester. Contactgegevens staan onderaan deze pagina."
+          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester(s). Contactgegevens staan onderaan deze pagina."
         />
         <FAQCard
           title="Parkeren"
@@ -151,7 +163,7 @@ import Countdown from "../components/Countdown.astro";
           body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester. Contactgegevens staan onderaan deze pagina."
         />
       </div>
-    </section> -->
+    </section>
 
     <section id="ceremonie" class="backdrop">
       <div class="text backdrop-text">
@@ -168,17 +180,17 @@ import Countdown from "../components/Countdown.astro";
         <div class="ceremoniemeesters">
           <div class="person">
             <h3 class="oranje">Danique Touw</h3>
-            <p>06-12345678</p>
+            <p>06-23084445</p>
             <a href="mailto:bruiloftloekennicolien@gmail.com"
-              >bruiloftloekennicolien@gmail.com</a
-            >
+              >bruiloftloekennicolien@gmail.com
+            </a>
           </div>
           <div class="person">
             <h3 class="oranje">Art van Eeden Petersman</h3>
-            <p>06-12345678</p>
+            <p>06-186767622</p>
             <a href="mailto:bruiloftloekennicolien@gmail.com"
-              >bruiloftloekennicolien@gmail.com</a
-            >
+              >bruiloftloekennicolien@gmail.com
+            </a>
           </div>
         </div>
       </div>

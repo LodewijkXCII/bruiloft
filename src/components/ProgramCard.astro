@@ -1,13 +1,13 @@
 ---
-const { title, time, body } = Astro.props;
+const { title, time, text } = Astro.props;
 ---
 
 <div class="program-card">
-  <div class="program-card--time text-light">12:30</div>
+  <div class="program-card--time text-light">{time}</div>
   <div class="program-card--text">
-    <h3 class="program-card--text__title">Ontvangst</h3>
+    <h3 class="program-card--text__title">{title}</h3>
     <p class="program-card--text__body">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, dolorum?
+      {text}
     </p>
   </div>
 </div>
@@ -17,7 +17,7 @@ const { title, time, body } = Astro.props;
     display: grid;
     grid-template-columns: min-content auto;
     gap: 1rem;
-    margin: 0.5rem 0;
+    margin: 1.5rem 0;
 
     &--time {
       background-color: var(--clr-paars);
