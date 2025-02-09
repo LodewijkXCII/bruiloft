@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/db": "^0.14.6",
     "astro": "^5.0.5",
     "sass": "^1.77.8"
   }

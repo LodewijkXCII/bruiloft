@@ -2,11 +2,11 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 
-import Riley from "../img/heart-529607_1280.jpg";
+import Countdown from "../components/Countdown.astro";
+import FAQCard from "../components/FAQCard.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import SigninForm from "../components/SigninForm.astro";
-import FAQCard from "../components/FAQCard.astro";
-import Countdown from "../components/Countdown.astro";
+import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
 ---
 
 <Layout title="Loek en Nicolien gaan trouwen!">
@@ -35,13 +35,15 @@ import Countdown from "../components/Countdown.astro";
           </div>
           <div class="card-body">
             <p>
-              We’re thrilled to invite you to celebrate our wedding in the heart
-              of Friesland. Our website is your go-to source for all the
-              essential details, including the event schedule, venue
-              information, dress code, RSVP options, and travel arrangements. We
-              look forward to sharing this beautiful day with you and creating
-              unforgettable memories together!
+              We kijken er naar uit om onze grote dag met jullie te vieren in
+              het mooie Friesland. Onze website is je go-to voor alle nodige
+              informatie, details, het programma, dress code, RSVP etcetera.
             </p>
+            <p>
+              We kunnen niet wachten om deze fantastische dag met jullie te
+              beleven en mooie herinneringen te maken!
+            </p>
+            <p>Liefs, Loek & Nicolien</p>
           </div>
           <div class="card-footer">
             <p>Meer informatie over:</p>
@@ -54,7 +56,7 @@ import Countdown from "../components/Countdown.astro";
           </div>
         </div>
         <div class="card-image">
-          <Image src={Riley} alt="" />
+          <Image src={WeddingImg} alt="" />
         </div>
       </div>
     </section>
@@ -72,22 +74,19 @@ import Countdown from "../components/Countdown.astro";
     <section id="thema" class="backdrop">
       <div class="text backdrop-text">
         <div class="block-title">
-          <h2>Thema</h2>
+          <h2>Dresscode</h2>
           <p class="text-subtle oranje">Vier de vreugde!</p>
         </div>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quos
-          rem laborum ducimus quod assumenda numquam inventore veritatis,
-          consequuntur, voluptatum voluptatem nulla nobis atque ipsa dolores
-          minus dolore asperiores dicta illo. Harum illo officiis at soluta
-          aspernatur eum reiciendis aperiam qui sed, consectetur dolore eius
-          provident autem beatae voluptatem suscipit, quidem modi ratione,
-          ducimus assumenda magni explicabo aliquam. In, suscipit?
+          De dress code is Colourful Chique. Qua kleur kan het niet gek genoeg.
+          Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
+          fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
+          kijkje op het inspiratiebord via onderstaande button!
         </p>
         <a
           href="https://pin.it/1KDGLpjst"
           class="btn btn-primary"
-          target="_blank">Bekijk het Pinterest board</a
+          target="_blank">Bekijk het inspiratiebord</a
         >
       </div>
     </section>
@@ -100,17 +99,28 @@ import Countdown from "../components/Countdown.astro";
             <p class="text-subtle paars">Vier het samenzijn!</p>
           </div>
           <p class="text-light">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi quos
-            rem laborum ducimus quod assumenda numquam inventore veritatis,
-            consequuntur, voluptatum voluptatem nulla nobis atque ipsa dolores
-            minus dolore asperiores dicta illo. Harum illo officiis at soluta
-            aspernatur eum reiciendis aperiam qui sed, consectetur dolore eius
-            provident autem beatae voluptatem suscipit, quidem modi ratione,
-            ducimus assumenda magni explicabo aliquam. In, suscipit?
+            Onze bruiloft zal plaatsvinden in een klein dorpje in Friesland,
+            namelijk: Elahuizen. Wie kent het niet! In een
+            zeilschoolaccommodatie gaat het allemaal plaatsvinden.
+          </p>
+          <p class="text-light">
+            Uiteraard niet zo maar een zeilschool, maar de zeilschool waar Nico
+            jaren heeft rondgelopen en menig uur heeft doorgebracht. Een plek
+            waar alles mogelijk is.
+          </p>
+          <p class="text-light">
+            Wat ons de mogelijkheid geeft het precies te doen, zoals we willen!
+            Een beetje basic to basic met een feestelijke touch.
+          </p>
+          <p class="text-light">
+            <a href="https://g.co/kgs/ifF2C5H">
+              Mardyk 21M<br />
+              8581KG Elahuizen
+            </a>
           </p>
         </div>
         <div class="card-image">
-          <Image src={Riley} alt="" />
+          <Image src={WeddingImg} alt="" />
         </div>
       </div>
     </section>
@@ -123,25 +133,33 @@ import Countdown from "../components/Countdown.astro";
         </div>
 
         <p>
-          Kom mee in onze bubbel en laat je heel de dag meenemen tot het einde
-          van avond. Het exacte programma laten we dus ook niet weten. Dit zijn
-          in hoofdlijnen het progamma.
+          We nemen je graag mee in onze bruiloft bubbel van begin tot einde.
         </p>
         <br />
         <ProgramCard
-          time="13:30"
+          time="13:00"
           title="Ontvangst"
-          text="Ontvangst is inclusief koffie, thee en een kleine versnapering. Let op, er zal geen lunch zijn."
+          text="Er zal een kopje koffie en/of thee voor je klaarstaan met een kleine versnapering. Let op: er zal geen lunch zijn. Voor de mensen die niet aan lunch hebben gedacht"
         />
         <ProgramCard
-          time="14:00"
-          title="Ceremonie"
-          text="De dag gaat dan echt beginnen. Vanaf de ceremonie zal je meegenomen worden in de rest van de dag."
+          time="13:30"
+          title="Start van onze dag"
+          text="Tijdens de ceremonie zullen ook wij elkaar voor het eerst gaan zien. We kunnen niet wachten! Hierna is het natuurlijk tijd voor een eerste proostmoment. Er zullen er vast nog vele volgen die dag. Uiteraard gaat dit allemaal gebeuren met een hapje en een muziekje. Slecht ter been? Laat het de ceremoniemeester weten."
         />
         <ProgramCard
-          time="01:00"
-          title="Afsluiting"
-          text="Aan alles komt een eind. Zo ook de bruiloft. We hopen dat je een top dag hebt gehad!"
+          time="18:00"
+          title="Diner"
+          text="Ons diner kan natuurlijk maar door één cateraar verzorgd worden. Nu horen we jullie denken, gaat Loek zelf achter de grill staan? Tuurlijk niet! Wel zullen de andere brothers (Lars en Steven) van The Ribtastic Brother zorgen voor een heerlijk diner, naar ieders wens."
+        />
+        <ProgramCard
+          time="20:30"
+          title="Feest"
+          text="Tijd om die heupjes los te gooien! Parel van ABBA, Carnavals kraker, hakken met Paul Elstak of liever mee blèren met een Nederlands hitje? Het kan allemaal! Dat de voetjes van de vloer gaan is een ding wat zeker is!"
+        />
+        <ProgramCard
+          time="00:30"
+          title="Einde Feest"
+          text="Aan alles komt een eind. Helaas ook aan deze dag. We hopen dat je een fantastische dag hebt gehad, vol mooie momenten. Slaaplekker voor nu!"
         />
       </div>
     </section>
@@ -151,16 +169,42 @@ import Countdown from "../components/Countdown.astro";
           <h2 class="oranje">Pratische informatie</h2>
         </div>
         <FAQCard
-          title="Speeches"
-          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester(s). Contactgegevens staan onderaan deze pagina."
+          title="Vervoer"
+          body="Met het OV is het 2 treinen, 3 bussen en 4,5 uur later vanaf Rotterdam Centraal. We raden je van harte aan om met de auto te komen of met iemand mee te rijden."
         />
         <FAQCard
           title="Parkeren"
-          body="Er is voldoende parkeergelegenheid bij onze trouwlocatie, dus kom gerust met de auto."
+          body="Precies voor de locatie ligt een groot parkeerterrein met gratis en voldoende parkeergelegenheid. Probeer niet te diep in te ademen als je je auto uitstapt. De klap van het boerenland komt al gauw op je af."
         />
         <FAQCard
           title="Speeches"
-          body="Wij vinden speeches en ludieke acties super leuk! De dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester. Contactgegevens staan onderaan deze pagina."
+          body="Wij vinden speeches en ludieke acties super leuk, maar de dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester(s). Contactgegevens staan onderaan deze pagina."
+        />
+
+        <FAQCard
+          title="Slapen"
+          body="Een select gezelschap zal blijven slapen op de locatie. Check vooral even de paklijst, zodat je niet ongelegen zit. Nog geen slaapplek? Er zijn meerdere opties voor vakantiehuisjes en hotels in de buurt. Met de caravan of camper? Camping in de buurt: Mini camping Pressefinne. Dit is 1,5 km van de bruiloftlocatie. Op de parkeerplaats staan is ook een optie. Op eigen risico. Dit is zonder elektra."
+        />
+        <FAQCard
+          title="Ontbijt"
+          body="Het ontbijt zal plaatsvinden om 9:30. Slaap je niet bij ons op de locatie, maar heb je wel besloten in de buurt te overnachten? Voel je vooral welkom om wel met ons mee te ontbijten! Laat dit dan even aan de ceremoniemeester(s) weten, zodat we daar rekening mee kunnen houden."
+        />
+        <FAQCard title="Cadeau" body="knaken" />
+        <FAQCard
+          title="Foto's"
+          body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken."
+        />
+        <FAQCard
+          title="Plus one"
+          body="We willen onze bruiloft zo intiem mogelijk houden. De namen die op de envelop staan zijn uitgenodigd."
+        />
+        <FAQCard
+          title="Kinderen"
+          body="Hoe veel we ook van kinderen houden. Hebben we er toch van gekozen om onze bruiloft zonder kinderen te laten plaatsvinden. We hopen op jullie begrip en kijken er naar uit om samen met jullie een ontspannen en feestelijke dag te beleven."
+        />
+        <FAQCard
+          title="Planning"
+          body="De ceremonie is een bijzonder moment wat we graag op tijd willen beginnen. We vragen jullie daarom op tijd te komen. Te laat zijn, zou zonde zijn van dit speciale moment."
         />
       </div>
     </section>
