@@ -1,5 +1,7 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 
 import Countdown from "../components/Countdown.astro";
@@ -7,6 +9,11 @@ import FAQCard from "../components/FAQCard.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import SigninForm from "../components/SigninForm.astro";
 import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
+import Locatie from "../img/zeilschool-voorkant.jpg";
+
+const programEvents = await getCollection("program");
+
+programEvents.sort((a, b) => a.data.position - b.data.position);
 ---
 
 <Layout title="Loek en Nicolien gaan trouwen!">
@@ -43,15 +50,18 @@ import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
               We kunnen niet wachten om deze fantastische dag met jullie te
               beleven en mooie herinneringen te maken!
             </p>
-            <p>Liefs, Loek & Nicolien</p>
+            <p>Liefs,</p>
+            <p class="roze text-heading">Loek & Nicolien</p>
           </div>
           <div class="card-footer">
             <p>Meer informatie over:</p>
             <ul>
-              <li><a href="#programma">Programma</a></li>
               <li><a href="#aanmelden">Aanmelden</a></li>
               <li><a href="#thema">Thema</a></li>
               <li><a href="#locatie">Locatie</a></li>
+              <li><a href="#programma">Programma</a></li>
+              <li><a href="#faq">Pratische informatie</a></li>
+              <li><a href="#ceremonie">Ceremoniemeesters</a></li>
             </ul>
           </div>
         </div>
@@ -120,7 +130,7 @@ import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
           </p>
         </div>
         <div class="card-image">
-          <Image src={WeddingImg} alt="" />
+          <Image src={Locatie} alt="" />
         </div>
       </div>
     </section>
@@ -132,35 +142,18 @@ import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
           <p class="text-subtle paars">Vier het geluk!</p>
         </div>
 
-        <p>
-          We nemen je graag mee in onze bruiloft bubbel van begin tot einde.
-        </p>
+        <p>We nemen je graag mee in onze bruiloft bubbel van begin tot eind.</p>
         <br />
-        <ProgramCard
-          time="13:00"
-          title="Ontvangst"
-          text="Er zal een kopje koffie en/of thee voor je klaarstaan met een kleine versnapering. Let op: er zal geen lunch zijn. Voor de mensen die niet aan lunch hebben gedacht"
-        />
-        <ProgramCard
-          time="13:30"
-          title="Start van onze dag"
-          text="Tijdens de ceremonie zullen ook wij elkaar voor het eerst gaan zien. We kunnen niet wachten! Hierna is het natuurlijk tijd voor een eerste proostmoment. Er zullen er vast nog vele volgen die dag. Uiteraard gaat dit allemaal gebeuren met een hapje en een muziekje. Slecht ter been? Laat het de ceremoniemeester weten."
-        />
-        <ProgramCard
-          time="18:00"
-          title="Diner"
-          text="Ons diner kan natuurlijk maar door één cateraar verzorgd worden. Nu horen we jullie denken, gaat Loek zelf achter de grill staan? Tuurlijk niet! Wel zullen de andere brothers (Lars en Steven) van The Ribtastic Brother zorgen voor een heerlijk diner, naar ieders wens."
-        />
-        <ProgramCard
-          time="20:30"
-          title="Feest"
-          text="Tijd om die heupjes los te gooien! Parel van ABBA, Carnavals kraker, hakken met Paul Elstak of liever mee blèren met een Nederlands hitje? Het kan allemaal! Dat de voetjes van de vloer gaan is een ding wat zeker is!"
-        />
-        <ProgramCard
-          time="00:30"
-          title="Einde Feest"
-          text="Aan alles komt een eind. Helaas ook aan deze dag. We hopen dat je een fantastische dag hebt gehad, vol mooie momenten. Slaaplekker voor nu!"
-        />
+        {
+          programEvents.map(({ data, rendered }) => (
+            // console.log(card)
+            <ProgramCard
+              time={data.time}
+              title={data.title}
+              text={rendered.html}
+            />
+          ))
+        }
       </div>
     </section>
     <section id="faq">
@@ -189,7 +182,10 @@ import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
           title="Ontbijt"
           body="Het ontbijt zal plaatsvinden om 9:30. Slaap je niet bij ons op de locatie, maar heb je wel besloten in de buurt te overnachten? Voel je vooral welkom om wel met ons mee te ontbijten! Laat dit dan even aan de ceremoniemeester(s) weten, zodat we daar rekening mee kunnen houden."
         />
-        <FAQCard title="Cadeau" body="knaken" />
+        <FAQCard
+          title="Cadeau"
+          body={'<img src="envelope-white.svg" alt="" />'}
+        />
         <FAQCard
           title="Foto's"
           body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken."

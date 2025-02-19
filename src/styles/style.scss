@@ -2,8 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@300..700&display=swap");
 
 @font-face {
-  font-family: "BrittanySignature"; /*a name to be used later*/
-  src: url("./BrittanySignature.ttf"); /*URL to font*/
+  font-family: "BrittanySignature";
+  /*a name to be used later*/
+  src: url("./BrittanySignature.ttf");
+  /*URL to font*/
 }
 
 :root {
@@ -67,7 +69,8 @@ body {
 
 section {
   background-color: var(--clr-background-muted);
-  > * {
+
+  >* {
     margin-inline: auto;
     max-width: 1024px;
   }
@@ -80,18 +83,31 @@ section {
 .roze {
   color: var(--clr-roze);
 }
+
 .oranje {
   color: var(--clr-oranje);
 }
+
 .paars {
   color: var(--clr-paars);
 }
 
 .text-light {
   color: var(--clr-text-light);
+
+  a {
+    color: var(--clr-oranje);
+
+  }
 }
+
 .text-dark {
   color: var(--clr-text);
+}
+
+.text-heading {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-600);
 }
 
 h1,
@@ -148,9 +164,16 @@ a {
   }
 }
 
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+  margin: .25rem 0;
+}
+
 .block-title {
   position: relative;
 }
+
 .text-subtle {
   font-family: var(--ff-extra);
   font-size: var(--fs-600);
@@ -159,13 +182,13 @@ a {
   top: -20px;
   left: -35px;
 }
+
 .countdown {
   font-size: var(--fs-900);
 }
 
 .brand-logo {
-  filter: invert(62%) sepia(7%) saturate(799%) hue-rotate(229deg)
-    brightness(96%) contrast(91%);
+  filter: invert(62%) sepia(7%) saturate(799%) hue-rotate(229deg) brightness(96%) contrast(91%);
   max-height: 250px;
   margin: auto;
 }
@@ -175,6 +198,7 @@ a {
     height: 150px;
   }
 }
+
 .hr-line {
   height: 2px;
   width: 35%;
@@ -183,6 +207,7 @@ a {
   margin: auto;
   transform: rotate(-1deg);
 }
+
 header {
   height: 100svh;
   text-align: center;
@@ -195,6 +220,7 @@ header {
 header {
   clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
 }
+
 section {
   clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
   padding: 3rem;
@@ -238,6 +264,7 @@ section {
       color: var(--clr-roze);
     }
   }
+
   &-secondary {
     background-color: var(--clr-oranje);
     color: var(--clr-text-light);
@@ -255,7 +282,7 @@ section {
   margin: 4rem 0;
   align-content: space-evenly;
 
-  > * {
+  >* {
     margin-bottom: 1em;
   }
 
@@ -264,6 +291,7 @@ section {
     gap: 1rem;
   }
 }
+
 .image {
   height: 100%;
   overflow: hidden;
@@ -283,11 +311,13 @@ section {
     margin: 1rem 0;
   }
 }
+
 .card,
 .text {
   padding: 2rem 4rem;
   margin-block: 10rem;
 }
+
 .card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -304,21 +334,26 @@ section {
 
     .card-footer {
       ul {
-        list-style-type: none;
-        display: flex;
+        list-style-type: circle;
+        list-style-position: inside;
         gap: 0.5rem;
-
-        li::after {
-          content: " \00B7";
-        }
       }
     }
   }
+
   .card-image {
     height: auto;
-    border-radius: 1rem;
     overflow: hidden;
+
+    img {
+      border-radius: 1rem;
+
+    }
   }
+}
+
+.info-card__body img {
+  max-width: 50px;
 }
 
 .text {
@@ -326,6 +361,7 @@ section {
 }
 
 @media (max-width: 50em) {
+
   .card,
   .text {
     padding: 2rem;
@@ -368,6 +404,7 @@ section {
     color: var(--clr-text);
     font-weight: 400;
   }
+
   .person {
     position: relative;
   }

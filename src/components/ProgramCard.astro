@@ -6,9 +6,7 @@ const { title, time, text } = Astro.props;
   <div class="program-card--time text-light">{time}</div>
   <div class="program-card--text">
     <h3 class="program-card--text__title">{title}</h3>
-    <p class="program-card--text__body">
-      {text}
-    </p>
+    <div class="program-card--text__body" set:html={text} />
   </div>
 </div>
 
