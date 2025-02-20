@@ -7,9 +7,11 @@ import Layout from "../layouts/Layout.astro";
 import Countdown from "../components/Countdown.astro";
 import FAQCard from "../components/FAQCard.astro";
 import ProgramCard from "../components/ProgramCard.astro";
-import SigninForm from "../components/SigninForm.astro";
+import SigninForm from "../components/SigninForm.vue";
 import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
+import Wedding from "../img/wedding.jpg";
 import Locatie from "../img/zeilschool-voorkant.jpg";
+import Envelope from "../img/envelope-white.svg";
 
 const programEvents = await getCollection("program");
 
@@ -20,7 +22,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
   <main>
     <header class="wrapper">
       <div class="image">
-        <img src="img/wedding.jpg" alt="" />
+        <Image src={Wedding} alt="" />
       </div>
       <div class="save-the-date">
         <h1>Loek<br />&<br />Nicolien</h1>
@@ -77,7 +79,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
           <h2 class="oranje">We horen graag of je erbij bent!</h2>
           <p class="text-subtle paars">Vier met ons!</p>
         </div>
-        <SigninForm />
+        <SigninForm client:load />
       </div>
     </section>
 
@@ -182,10 +184,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
           title="Ontbijt"
           body="Het ontbijt zal plaatsvinden om 9:30. Slaap je niet bij ons op de locatie, maar heb je wel besloten in de buurt te overnachten? Voel je vooral welkom om wel met ons mee te ontbijten! Laat dit dan even aan de ceremoniemeester(s) weten, zodat we daar rekening mee kunnen houden."
         />
-        <FAQCard
-          title="Cadeau"
-          body={'<img src="envelope-white.svg" alt="" />'}
-        />
+        <!-- <FAQCard title="Cadeau" body={'<Image src={Envelope} alt="" />'} /> -->
         <FAQCard
           title="Foto's"
           body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken."

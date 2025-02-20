@@ -1,17 +1,19 @@
 {
-  "name": "Bruiloft Loek en Nico",
+  "name": "bruiloft-loek-en-nicolien",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --remote",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build --remote",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/db": "^0.14.6",
-    "astro": "^5.0.5",
+    "@astrojs/vue": "^5.0.6",
+    "@libsql/client": "^0.14.0",
+    "astro": "^5.3.0",
     "sass": "^1.77.8"
   }
 }

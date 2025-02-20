@@ -424,3 +424,10 @@ section {
     grid-template-columns: 1fr;
   }
 }
+
+.succes {
+  border: 2px solid var(--clr-oranje);
+  border-radius: .5rem;
+  margin: .75rem 0;
+  padding: .5rem .75rem;
+}
