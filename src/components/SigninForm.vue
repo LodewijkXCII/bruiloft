@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
-const responseMessage = ref<string>(
-  "Bedankt voor je aanmelding! Wij kunnen niet wachten!"
-);
+const responseMessage = ref<string>("");
 
 async function submit(e: Event) {
   e.preventDefault();
@@ -61,7 +59,7 @@ async function submit(e: Event) {
       <textarea name="opmerkingen" id="opmerkingen"></textarea>
     </div>
 
-    <button class="btn btn-secondary" type="submit">Aanmelden</button>
+    <div class="btn btn-secondary" type="submit">Aanmelden</div>
     <!-- <input type="submit" value="Spel toevoegen" /> -->
   </form>
 </template>
