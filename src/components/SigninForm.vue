@@ -59,7 +59,7 @@ async function submit(e: Event) {
       <textarea name="opmerkingen" id="opmerkingen"></textarea>
     </div>
 
-    <div class="btn btn-secondary" type="submit">Aanmelden</div>
+    <button class="btn btn-secondary" type="submit">Aanmelden</button>
     <!-- <input type="submit" value="Spel toevoegen" /> -->
   </form>
 </template>
