@@ -1,16 +1,21 @@
 export const prerender = false;
 
 import { APIRoute } from "astro";
-import { db, RSVP } from "astro:db";
+import { db, RSVP, GERECHT } from "astro:db";
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
+
+  console.log(data);
 
   const name = data.get("naam");
   const email = data.get("email");
   const rsvp = data.get("rsvp");
   const allergien = data.get("allergien");
   const comment = data.get("opmerkingen");
+
+  const gerecht1 = data.get("gerecht1");
+  const gerecht2 = data.get("gerecht2");
 
   const body = {
     name,
@@ -29,7 +34,27 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
-  await db.insert(RSVP).values(body).returning();
+  const insertID = await db
+    .insert(RSVP)
+    .values(body)
+    .returning({ id: RSVP.id });
+
+  const gerechten_body = [
+    {
+      keuze: gerecht1,
+      rsvp_id: insertID[0].id,
+    },
+  ];
+  console.log(insertID, gerecht1, gerechten_body);
+
+  if (gerecht2) {
+    gerechten_body.push({
+      keuze: gerecht2,
+      rsvp_id: insertID[0].id,
+    });
+  }
+
+  await db.insert(GERECHT).values(gerechten_body).returning();
 
   return new Response(
     JSON.stringify({

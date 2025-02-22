@@ -16,6 +16,8 @@ async function submit(e: Event) {
   const data = await response.json();
   responseMessage.value = data.message;
 }
+
+const count = ref(1);
 </script>
 
 <template>
@@ -38,15 +40,21 @@ async function submit(e: Event) {
         <option value="nee">Helaas, ik kan niet.</option>
       </select>
     </div>
-    <!-- <div class="input-wrapper">
-    <label for="meal">Wil je het vlees of vis of vegatarisch menu?</label>
-    <select name="meal" id="meal">
+    <div class="input-wrapper">
+      <label for="aantal">Met hoeveel personen kom je?</label>
+      <input type="number" id="aantal" name="aantal" v-model="count" required min="1" max="2">
+      <p>Zie 'plus one' bij de <a href="#faq">praktische informatie</a></p>
+    </div>
+
+    <div class="input-wrapper" v-for="(n) in count">
+    <label :for="`gerecht${n}`">Wil je het vlees, vis of vegatarisch menu?</label>
+    <select :name="`gerecht${n}`" :id="`gerecht${n}`" >
       <option value="select" disabled selected>Selecteer...</option>
       <option value="Vlees">Vlees</option>
       <option value="Vis">Vis</option>
       <option value="Vega">Vegatarisch</option>
     </select>
-  </div> -->
+  </div>
     <div class="input-wrapper">
       <label for="allergien"
         >Allergieën waar we rekening mee moeten houden?</label

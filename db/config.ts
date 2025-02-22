@@ -14,9 +14,24 @@ const RSVP = defineTable({
   },
 });
 
+const GERECHT = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    rsvp_id: column.number({
+      references: () => RSVP.columns.id,
+      optional: false,
+    }),
+    keuze: column.text(),
+    created_at: column.date({ default: NOW }),
+    updated_at: column.date({ default: NOW }),
+    deleted_at: column.date({ optional: true }),
+  },
+});
+
 // https://astro.build/db/config
 export default defineDb({
   tables: {
     RSVP,
+    GERECHT,
   },
 });
