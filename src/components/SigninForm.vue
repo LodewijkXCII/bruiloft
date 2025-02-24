@@ -46,18 +46,29 @@ const count = ref(1);
       <p>Zie 'plus one' bij de <a href="#faq">praktische informatie</a></p>
     </div>
 
-    <div class="input-wrapper" v-for="(n) in count">
-    <label :for="`gerecht${n}`">Wil je het vlees, vis of vegatarisch menu?</label>
-    <select :name="`gerecht${n}`" :id="`gerecht${n}`" >
-      <option value="select" disabled selected>Selecteer...</option>
-      <option value="Vlees">Vlees</option>
-      <option value="Vis">Vis</option>
-      <option value="Vega">Vegatarisch</option>
-    </select>
-  </div>
+    <div v-for="(n) in count" class="input-wrapper-grouped">
+      <div class="input-wrapper">
+        <label :for="`gerecht${n}`"><span v-if="n==1">Wil je</span><span v-else>Wilt je partner</span> het vlees, vis of vegatarisch menu?</label>
+        <select :name="`gerecht${n}`" :id="`gerecht${n}`" >
+          <option value="select" disabled selected>Selecteer...</option>
+          <option value="Vlees">Vlees</option>
+          <option value="Vis">Vis</option>
+          <option value="Vega">Vegatarisch</option>
+        </select>
+      </div>
+      <div class="input-wrapper">
+        <label :for="`ontbijt${n}`">Ontbijt <span v-if="n==1">je</span><span v-else>je partner</span> mee?</label>
+        <select :name="`ontbijt${n}`" :id="`ontbijt${n}`" >
+           <option value="select" disabled selected>Selecteer...</option>
+        <option value="ja">Absoluut!</option>
+        <option value="nee">Helaas, ik kan niet.</option>
+        </select>
+      </div>
+    </div>
+  
     <div class="input-wrapper">
       <label for="allergien"
-        >Allergieën waar we rekening mee moeten houden?</label
+        >Allergieën of dieetwensen waar we <span v-show="count >1">voor jouw en je partner </span>rekening mee moeten houden?</label
       >
       <input type="text" name="allergien" id="allergien" />
     </div>

@@ -1,4 +1,5 @@
 import { defineDb, column, defineTable, NOW } from "astro:db";
+import { boolean } from "astro:schema";
 
 const RSVP = defineTable({
   columns: {
@@ -7,6 +8,7 @@ const RSVP = defineTable({
     email: column.text(),
     rsvp: column.text(),
     allergien: column.text({ optional: true }),
+    muziek: column.text({ optional: true }),
     comment: column.text({ optional: true }),
     created_at: column.date({ default: NOW }),
     updated_at: column.date({ default: NOW }),
@@ -22,6 +24,7 @@ const GERECHT = defineTable({
       optional: false,
     }),
     keuze: column.text(),
+    ontbijt: column.boolean(),
     created_at: column.date({ default: NOW }),
     updated_at: column.date({ default: NOW }),
     deleted_at: column.date({ optional: true }),

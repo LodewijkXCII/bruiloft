@@ -1,5 +1,5 @@
 label {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 input,
@@ -22,10 +22,19 @@ form {
     margin: 1.5rem 0 0 auto;
   }
 }
+
 .input-duo {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+.input-wrapper-grouped {
+  border-radius: 5px;
+  margin: 1rem -.75rem;
+  padding: .75rem;
+  background: rgba(var(--rgb-paars), 0.25);
+
 }
 
 .input-wrapper {

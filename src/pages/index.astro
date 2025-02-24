@@ -8,7 +8,7 @@ import Countdown from "../components/Countdown.astro";
 import FAQCard from "../components/FAQCard.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import SigninForm from "../components/SigninForm.vue";
-import WeddingImg from "../img/PXL_20230605_112036419_croped (Gemiddeld).jpg";
+import WeddingImg from "../img/l-n-f.jpg";
 import Wedding from "../img/wedding.jpg";
 import Locatie from "../img/zeilschool-voorkant.jpg";
 import Envelope from "../img/envelope-white.svg";
@@ -46,7 +46,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
             <p>
               We kijken er naar uit om onze grote dag met jullie te vieren in
               het mooie Friesland. Onze website is je go-to voor alle nodige
-              informatie, details, het programma, dress code, RSVP etcetera.
+              informatie, details, het programma, dresscode, RSVP etcetera.
             </p>
             <p>
               We kunnen niet wachten om deze fantastische dag met jullie te
@@ -59,10 +59,10 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
             <p>Meer informatie over:</p>
             <ul>
               <li><a href="#aanmelden">Aanmelden</a></li>
-              <li><a href="#thema">Thema</a></li>
+              <li><a href="#thema">Dresscode</a></li>
               <li><a href="#locatie">Locatie</a></li>
               <li><a href="#programma">Programma</a></li>
-              <li><a href="#faq">Pratische informatie</a></li>
+              <li><a href="#faq">Praktische informatie</a></li>
               <li><a href="#ceremonie">Ceremoniemeesters</a></li>
             </ul>
           </div>
@@ -83,14 +83,18 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
       </div>
     </section>
 
-    <section id="thema" class="backdrop" style="background-image: url(/src/img/07e96e7fba74414bab1f5e7a37a62002.jpg);">
+    <section
+      id="thema"
+      class="backdrop"
+      style="background-image: url(/img/07e96e7fba74414bab1f5e7a37a62002.jpg);"
+    >
       <div class="text backdrop-text">
         <div class="block-title">
-          <h2>Dress code</h2>
+          <h2>Dresscode</h2>
           <p class="text-subtle oranje">Vier de vreugde!</p>
         </div>
         <p>
-          De dress code is Colourful Chique. Qua kleur kan het niet gek genoeg.
+          De dresscode is Colourful Chique. Qua kleur kan het niet gek genoeg.
           Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
           fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
           kijkje op het inspiratiebord via onderstaande button!
@@ -121,8 +125,8 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
             waar alles mogelijk is.
           </p>
           <p class="text-light">
-            Wat ons de mogelijkheid geeft het precies te doen, zoals we willen!
-            Een beetje basic to basic met een feestelijke touch.
+            Wat ons de mogelijkheid geeft het precies te doen zoals we willen!
+            Een beetje back to basic met een feestelijke touch.
           </p>
           <p class="text-light">
             <a href="https://g.co/kgs/ifF2C5H">
@@ -144,7 +148,11 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
           <p class="text-subtle paars">Vier het geluk!</p>
         </div>
 
-        <p>We nemen je graag mee in onze bruiloft bubbel van begin tot eind.</p>
+        <p>
+          We nemen je graag mee in onze bruiloft bubbel van begin tot eind. We
+          doen niet aan aparte dag- of avondgasten, iedereen is er de gehele dag
+          bij!
+        </p>
         <br />
         {
           programEvents.map(({ data, rendered }) => (
@@ -173,29 +181,36 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
         />
         <FAQCard
           title="Speeches"
-          body="Wij vinden speeches en ludieke acties super leuk, maar de dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeester(s). Contactgegevens staan onderaan deze pagina."
+          body="Wij vinden speeches en ludieke acties super leuk, maar de dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeesters. Contactgegevens staan onderaan deze pagina."
         />
 
         <div class="info-card">
           <h3 class="info-card__title oranje">Slapen</h3>
           <p class="info-card__body text-light">
-              Een select gezelschap zal blijven slapen op de locatie. Check
-              vooral even de <a href="/paklijst" target="_blank">paklijst</a>, zodat je niet ongelegen zit. Nog geen
-              slaapplek? Er zijn meerdere opties voor vakantiehuisjes en hotels
-              in de buurt. Met de caravan of camper? Camping in de buurt: Mini
-              camping Pressefinne. Dit is 1,5 km van de bruiloftlocatie. Op de
-              parkeerplaats staan is ook een optie. Op eigen risico. Dit is
-              zonder elektra.
+            Een select gezelschap zal blijven slapen op de locatie. Check vooral
+            even de <a href="/paklijst" target="_blank">paklijst</a>, zodat je
+            niet ongelegen zit. Nog geen slaapplek? Er zijn meerdere opties voor
+            vakantiehuisjes en hotels in de buurt. Met de caravan of camper?
+            Camping in de buurt: Mini camping Pressefinne. Dit is 1,5 km van de
+            bruiloftlocatie. Op de parkeerplaats staan is ook een optie. Op
+            eigen risico. Dit is zonder elektra.
           </p>
         </div>
 
-        <FAQCard
-          title="Ontbijt"
-          body="Het ontbijt zal plaatsvinden om 9:30 uur. Slaap je niet bij ons op de locatie, maar heb je wel besloten in de buurt te overnachten? Voel je vooral welkom om wel met ons mee te ontbijten! Laat dit dan even aan de ceremoniemeester(s) weten, zodat we daar rekening mee kunnen houden."
-        />
-
         <div class="info-card">
-          <h3 class="info-card__title oranje">Cadeau</h3>
+          <h3 class="info-card__title oranje">Ontbijt</h3>
+          <div class="info-card__body text-light">
+            <p>
+              Het ontbijt zal plaatsvinden om 9:30 uur. Slaap je niet bij ons op
+              de locatie, maar heb je wel besloten in de buurt te overnachten?
+              Je bent van harte uitgenogigd om mee te eten. Laat het vooral
+              weten tijdens de <a href="/#aanmelden">aanmelding</a>, zodat we
+              daar rekening mee kunnen houden.
+            </p>
+          </div>
+        </div>
+        <div class="info-card">
+          <h3 class="info-card__title oranje">Cadeautip</h3>
           <div class="info-card__body text-light">
             <Image src={Envelope} alt="" />
           </div>
@@ -203,7 +218,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
 
         <FAQCard
           title="Foto's"
-          body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken."
+          body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken. Nog beter, laat je telefoon gerust je in tas."
         />
         <FAQCard
           title="Plus one"
@@ -220,7 +235,11 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
       </div>
     </section>
 
-    <section id="ceremonie" class="backdrop " style="background-image: url(/src/img/lolasevents-colorful-tafelstyling.jpg);">
+    <section
+      id="ceremonie"
+      class="backdrop"
+      style="background-image: url(/img/lolasevents-colorful-tafelstyling.jpg);"
+    >
       <div class="text backdrop-text">
         <div class="block-title">
           <h2 class="paars">Ceremoniemeesters</h2>
