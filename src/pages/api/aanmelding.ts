@@ -15,7 +15,9 @@ export const POST: APIRoute = async ({ request }) => {
   const comment = data.get("opmerkingen");
 
   const gerecht1 = data.get("gerecht1");
+  const ontbijt1 = data.get("ontbijt1");
   const gerecht2 = data.get("gerecht2");
+  const ontbijt2 = data.get("ontbijt2");
 
   const body = {
     name,
@@ -42,6 +44,7 @@ export const POST: APIRoute = async ({ request }) => {
   const gerechten_body = [
     {
       keuze: gerecht1,
+      ontbijt: ontbijt1,
       rsvp_id: insertID[0].id,
     },
   ];
@@ -50,6 +53,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (gerecht2) {
     gerechten_body.push({
       keuze: gerecht2,
+      ontbijt: ontbijt2,
       rsvp_id: insertID[0].id,
     });
   }

@@ -60,8 +60,8 @@ const count = ref(1);
         <label :for="`ontbijt${n}`">Ontbijt <span v-if="n==1">je</span><span v-else>je partner</span> mee?</label>
         <select :name="`ontbijt${n}`" :id="`ontbijt${n}`" >
            <option value="select" disabled selected>Selecteer...</option>
-        <option value="ja">Absoluut!</option>
-        <option value="nee">Helaas, ik kan niet.</option>
+        <option value="true">Absoluut!</option>
+        <option value="false">Helaas, ik kan niet.</option>
         </select>
       </div>
     </div>
