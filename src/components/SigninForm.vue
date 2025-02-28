@@ -81,6 +81,7 @@ const count = ref(1);
     </div>
 
     <button class="btn btn-secondary" type="submit">Aanmelden</button>
-    <!-- <input type="submit" value="Spel toevoegen" /> -->
+    <h3 class="text-light succes" v-if="responseMessage"> {{ responseMessage }}</h3>
+    
   </form>
 </template>
