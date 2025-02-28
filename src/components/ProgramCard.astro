@@ -3,9 +3,11 @@ const { title, time, text } = Astro.props;
 ---
 
 <div class="program-card">
-  <div class="program-card--time text-light">{time}</div>
+  <div class="program-card--title">
+    <div class="program-card--title__time">{time}</div>
+    <h3 class="program-card--title__text">{title}</h3>
+  </div>
   <div class="program-card--text">
-    <h3 class="program-card--text__title">{title}</h3>
     <div class="program-card--text__body" set:html={text} />
   </div>
 </div>
@@ -13,16 +15,41 @@ const { title, time, text } = Astro.props;
 <style lang="scss">
   .program-card {
     display: grid;
-    grid-template-columns: min-content auto;
+    // grid-template-columns: min-content auto;
+
+    grid: "time-title time-title" "blank body";
     gap: 1rem;
     margin: 1.5rem 0;
 
-    &--time {
-      background-color: var(--clr-paars);
-      align-self: start;
-      padding: 0.75rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
+    &--title {
+      grid-template-columns: subgrid;
+      display: grid;
+      grid-area: time-title;
+      align-items: center;
+
+      &__time {
+        background-color: var(--clr-oranje);
+        align-self: start;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-align: center;
+        color: var(--clr-text-light);
+      }
+    }
+
+    &--text {
+      grid-area: body;
+    }
+  }
+  @media (max-width: 50em) {
+    .program-card {
+      grid-template-columns: min-content auto;
+      gap: 0.5rem;
+
+      &--text {
+        grid-column: blank / body;
+      }
     }
   }
 </style>

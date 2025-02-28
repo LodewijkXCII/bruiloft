@@ -49,7 +49,7 @@ const count = ref(1);
     <div v-for="(n) in count" class="input-wrapper-grouped">
       <div class="input-wrapper">
         <label :for="`gerecht${n}`"><span v-if="n==1">Wil je</span><span v-else>Wilt je partner</span> het vlees, vis of vegatarisch menu?</label>
-        <select :name="`gerecht${n}`" :id="`gerecht${n}`" >
+        <select :name="`gerecht${n}`" :id="`gerecht${n}`" required>
           <option value="select" disabled selected>Selecteer...</option>
           <option value="Vlees">Vlees</option>
           <option value="Vis">Vis</option>
@@ -72,7 +72,10 @@ const count = ref(1);
       >
       <input type="text" name="allergien" id="allergien" />
     </div>
-
+<div class="input-wrapper">
+  <label for="muziek">Met welk nummer kom jij zeker de dansvloer op?</label>
+  <input type="text" name="muziek" id="muziek">
+</div>
     <div class="input-wrapper">
       <label for="opmerking">Heb je nog andere opmerkingen?</label>
       <textarea name="opmerkingen" id="opmerkingen"></textarea>

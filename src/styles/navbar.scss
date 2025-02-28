@@ -1,0 +1,111 @@
+.primary-header {
+  position: sticky;
+  z-index: 1000;
+  top: 2rem;
+}
+
+.nav-wrapper {
+  --_animationStartsAfter: 50vh;
+  --_animationDistance: 50px;
+
+  padding: .5rem 2rem;
+  background-color: var(--clr-oranje);
+  max-width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-inline: auto;
+  border-radius: 35px;
+  backdrop-filter: blur(0);
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  // animation: stickyNav linear forwards;
+
+  @supports (animation-timeline: view()) {
+    animation-timeline: view();
+    animation-range-start: calc(100vh + var(--_animationStartsAfter));
+    animation-range-end: calc(100vh + var(--_animationStartsAfter) + var(--_animationDistance));
+  }
+
+  @keyframes stickyNav {
+    100% {
+      background-color: rgba(var(--rgb-oranje), 0.3);
+      backdrop-filter: blur(25px);
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 600;
+  }
+
+  .nav-list li {
+    list-style-type: none;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    color: var(--clr-text-light);
+  }
+
+  .nav-list a:hover,
+  .nav-list a:focus {
+    color: var(--clr-roze);
+  }
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .primary-navigation {
+    display: none;
+    position: absolute;
+    padding: 4rem 2rem;
+    top: calc(100% - 35px);
+    right: 0;
+    left: 0;
+
+    background-color: rgba(var(--rgb-oranje), 1);
+    border-radius: 0 0 35px 35px;
+    z-index: -1;
+  }
+
+  .nav-wrapper {
+    max-width: 85%;
+
+
+    .nav-list {
+      display: grid;
+      text-align: right;
+      font-weight: 800;
+
+      button {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .primary-navigation[data-visible] {
+    display: block;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+
+    right: 1rem;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0.5em;
+  }
+
+  .mobile-nav-toggle .icon-close {
+    display: none;
+  }
+}

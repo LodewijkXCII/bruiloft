@@ -13,7 +13,7 @@ export const POST: APIRoute = async ({ request }) => {
   const rsvp = data.get("rsvp");
   const allergien = data.get("allergien");
   const comment = data.get("opmerkingen");
-
+  const muziek = data.get("muziek");
   const gerecht1 = data.get("gerecht1");
   const ontbijt1 = data.get("ontbijt1");
   const gerecht2 = data.get("gerecht2");
@@ -24,6 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
     email,
     rsvp,
     allergien,
+    muziek,
     comment,
   };
 

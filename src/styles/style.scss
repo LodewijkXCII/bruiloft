@@ -1,4 +1,5 @@
 @use "./input.scss";
+@use "./navbar.scss";
 @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Quicksand:wght@300..700&display=swap");
 
 @font-face {
@@ -15,7 +16,8 @@
   --clr-oranje: rgb(var(--rgb-oranje));
   --clr-roze: rgb(var(--rgb-roze));
   --clr-paars: rgb(var(--rgb-paars));
-  --clr-background-muted: rgb(196, 195, 197);
+  --clr-background-muted: rgb(var(--rgb-paars));
+  // --clr-background-muted: rgb(196, 195, 197);
 
   --clr-text: #1e1e1e;
   --clr-text-light: #e3e3e3;
@@ -141,7 +143,8 @@ h3 {
   color: var(--clr-roze);
 }
 
-p {
+p,
+li {
   letter-spacing: 1px;
 }
 
@@ -168,7 +171,7 @@ a {
 ul {
   list-style-type: circle;
   list-style-position: inside;
-  margin: .25rem 0;
+  margin: .75rem 0;
 }
 
 .block-title {
@@ -188,15 +191,15 @@ ul {
   font-size: var(--fs-900);
 }
 
-.brand-logo {
-  filter: invert(62%) sepia(7%) saturate(799%) hue-rotate(229deg) brightness(96%) contrast(91%);
-  max-height: 250px;
-  margin: auto;
+.brand-logo svg {
+  margin-left: .5rem;
+  height: 50px;
 }
+
 
 @media (max-width: 50em) {
   .brand-logo {
-    height: 150px;
+    height: 50px;
   }
 }
 
@@ -229,6 +232,7 @@ section {
 
 @media (max-width: 50em) {
   section {
+    clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0 100%);
     padding: 3rem 1rem;
   }
 }
@@ -237,6 +241,8 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 0 1rem;
+  max-width: 85%;
+  margin: auto;
 }
 
 .btn {
@@ -294,9 +300,18 @@ section {
 }
 
 .image {
+  display: flex;
+  align-items: center;
   height: 100%;
   overflow: hidden;
   filter: brightness(0.75);
+
+  img {
+    object-fit: contain;
+    height: 80%;
+    clip-path: polygon(0 10%, 100% 0%, 100% 90%, 0 100%);
+  }
+
 }
 
 @media (max-width: 50em) {
@@ -372,6 +387,7 @@ section {
   .card,
   .text {
     padding: 2rem;
+    margin-block: 5rem;
   }
 
   .card {
@@ -441,4 +457,14 @@ section {
 
 button {
   border: none
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
