@@ -8,7 +8,7 @@ import Countdown from "../components/Countdown.astro";
 import FAQCard from "../components/FAQCard.astro";
 import ProgramCard from "../components/ProgramCard.astro";
 import SigninForm from "../components/SigninForm.vue";
-import WeddingImg from "../img/l-en-n.jpg";
+import WeddingImg from "../img/lenn.jpg";
 import Wedding from "../img/wedding.jpg";
 import Locatie from "../img/zeilschool-voorkant.jpg";
 import Envelope from "../img/envelope-white.svg";
@@ -156,7 +156,6 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
         <br />
         {
           programEvents.map(({ data, rendered }) => (
-            // console.log(card)
             <ProgramCard
               time={data.time}
               title={data.title}

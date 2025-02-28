@@ -8,7 +8,6 @@ async function submit(e: Event) {
 
   const formData = new FormData(e.currentTarget as HTMLFormElement);
 
-  console.log(formData);
   const response = await fetch("/api/aanmelding", {
     method: "POST",
     body: formData,

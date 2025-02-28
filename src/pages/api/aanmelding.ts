@@ -6,8 +6,6 @@ import { db, RSVP, GERECHT } from "astro:db";
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData();
 
-  console.log(data);
-
   const name = data.get("naam");
   const email = data.get("email");
   const rsvp = data.get("rsvp");
@@ -49,7 +47,6 @@ export const POST: APIRoute = async ({ request }) => {
       rsvp_id: insertID[0].id,
     },
   ];
-  console.log(insertID, gerecht1, gerechten_body);
 
   if (gerecht2) {
     gerechten_body.push({
