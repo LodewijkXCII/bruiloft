@@ -232,6 +232,12 @@ section {
 }
 
 @media (max-width: 50em) {
+
+  header.wrapper {
+    margin-top: -4rem;
+    grid-template-rows: 1fr 350px;
+  }
+
   section {
     clip-path: polygon(0 5%, 100% 0%, 100% 95%, 0 100%);
     padding: 3rem 1rem;
@@ -317,7 +323,12 @@ section {
 
 @media (max-width: 50em) {
   .image {
-    display: none;
+    grid-row: 2;
+    // display: none;
+
+    img {
+      height: 100%;
+    }
   }
 
   .wrapper {
@@ -326,6 +337,7 @@ section {
 
   .save-the-date {
     margin: 1rem 0;
+    align-content: end;
   }
 }
 

@@ -2,9 +2,11 @@
 import { ref } from "vue";
 
 const responseMessage = ref<string>("");
+const buttonmessage = ref<string>("Aanmelden");
 
 async function submit(e: Event) {
   e.preventDefault();
+  buttonmessage.value = "Verzenden...";
 
   const formData = new FormData(e.currentTarget as HTMLFormElement);
 
@@ -14,6 +16,7 @@ async function submit(e: Event) {
   });
   const data = await response.json();
   responseMessage.value = data.message;
+  buttonmessage.value = "Verzonden!";
 }
 
 const count = ref(1);
@@ -28,7 +31,7 @@ const count = ref(1);
       <p>Graag met achternaam om misverstanden te voorkomen</p>
     </div>
     <div class="input-wrapper">
-      <label for="email">Je email</label>
+      <label for="email">Je e-mail</label>
       <input type="email" id="email" name="email" required />
     </div>
     <div class="input-wrapper">
@@ -67,7 +70,7 @@ const count = ref(1);
   
     <div class="input-wrapper">
       <label for="allergien"
-        >Allergieën of dieetwensen waar we <span v-show="count >1">voor jouw en je partner </span>rekening mee moeten houden?</label
+        >Allergieën of dieetwensen waar we <span v-show="count >1">voor jou en je partner </span>rekening mee moeten houden?</label
       >
       <input type="text" name="allergien" id="allergien" />
     </div>
@@ -80,7 +83,7 @@ const count = ref(1);
       <textarea name="opmerkingen" id="opmerkingen"></textarea>
     </div>
 
-    <button class="btn btn-secondary" type="submit">Aanmelden</button>
+    <button class="btn btn-secondary" type="submit">{{buttonmessage}}</button>
     <h3 class="text-light succes" v-if="responseMessage"> {{ responseMessage }}</h3>
     
   </form>

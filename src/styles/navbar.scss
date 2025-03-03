@@ -93,6 +93,9 @@
 
   .primary-navigation[data-visible] {
     display: block;
+
+
+
   }
 
   .mobile-nav-toggle {
@@ -106,7 +109,7 @@
     padding: 0.5em;
   }
 
-  y .mobile-nav-toggle .icon-close {
+  .mobile-nav-toggle .icon-close {
     display: none;
   }
 }
