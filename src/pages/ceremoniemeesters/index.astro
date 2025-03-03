@@ -1,0 +1,117 @@
+---
+export const prerender = false;
+import Layout from "../../layouts/Layout.astro";
+
+import { db, count, RSVP, GERECHT, eq, desc } from "astro:db";
+
+const gerechtData = await db.select().from(GERECHT);
+const countGerechten = await db
+  .select({
+    keuze: GERECHT.keuze,
+    aantal: count(GERECHT.id).as("aantal"),
+  })
+  .from(GERECHT)
+  .orderBy(desc("aantal"))
+  .groupBy(GERECHT.keuze);
+
+const rsvpData = await db
+  .select()
+  .from(RSVP)
+  .where(eq(RSVP.rsvp, "ja"))
+  .groupBy(RSVP.id)
+  .orderBy(RSVP.created_at);
+
+const rsvpWithGerechten = rsvpData.map((rsvp) => ({
+  ...rsvp,
+  gerechten: gerechtData.filter((gerecht) => gerecht.rsvp_id === rsvp.id),
+}));
+
+if (!rsvpWithGerechten) {
+  return Astro.redirect("/500");
+}
+---
+
+<Layout title="Aanmeldingen 👰">
+  <section id="aanmeldpagina">
+    <div class="card aanmelding">
+      <div class="aanmelding-count">
+        Aantal gekozen gerechten: <ul>
+          {
+            countGerechten.map((keuze) => (
+              <li>
+                {keuze.keuze}: {keuze.aantal}
+              </li>
+            ))
+          }
+        </ul>
+        <p>Aantal aangemelden gasten: {gerechtData.length} / 83</p>
+      </div>
+      {
+        rsvpWithGerechten.map((aanmelding, index) => (
+          <div class="aanmelding-card">
+            <div class="aanmelding-card--mainInfo">
+              <span>Aanmelding #{index + 1}</span>
+              <h3>{aanmelding.name}</h3>
+              <p>{aanmelding.email}</p>
+              {aanmelding.allergien && (
+                <p>
+                  Allergieën of dieetwensen:{" "}
+                  <span class="strong">{aanmelding.allergien}</span>
+                </p>
+              )}
+              <ul>
+                {aanmelding.gerechten.map((aanmeldingGerecht) => (
+                  <li>
+                    Gerecht: {aanmeldingGerecht.keuze === "Vlees" && "🥩"}{" "}
+                    {aanmeldingGerecht.keuze === "Vis" && "🎣"}
+                    {aanmeldingGerecht.keuze === "Vega" && "🥦"} & ontbijt
+                    {aanmeldingGerecht.ontbijt ? "✅" : "❌"}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="aanmelding-card--secInfo">
+              <p>Muziekkeuze: {aanmelding.muziek}</p>
+              <p>Opmerkingen: {aanmelding.comment}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .aanmelding-count {
+    grid-column: 1/-1;
+  }
+  .aanmelding {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+  .aanmelding-card {
+    padding: 1rem;
+    background: rgba(var(--rgb-roze), 1);
+    border-radius: 5px;
+    color: var(--clr-text-light);
+  }
+
+  h3 {
+    color: var(--clr-oranje);
+  }
+
+  .aanmelding-card:hover {
+    /* cursor: pointer; */
+    transform: scale(1.05);
+    transition: transform 500ms ease-in;
+  }
+
+  .aanmelding-card--mainInfo {
+    /* display: none; */
+  }
+  .aanmelding-card--secInfo {
+    display: none;
+  }
+</style>
