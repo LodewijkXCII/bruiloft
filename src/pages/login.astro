@@ -20,6 +20,7 @@ import LoginLayout from "../layouts/LoginLayout.astro";
 </LoginLayout>
 
 <script>
+  const password = document.getElementById("password");
   document
     .getElementById("login-form")
     .addEventListener("submit", async function (e) {
@@ -27,14 +28,14 @@ import LoginLayout from "../layouts/LoginLayout.astro";
       submitform();
     });
 
-  const password = document.getElementById("password").value;
   const responseMessage = document.getElementById("responseMessage");
 
   async function submitform() {
+    console.log(password.value);
     const response = await fetch("/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
+      body: JSON.stringify({ password: password.value }),
     });
 
     console.log(response);

@@ -6,6 +6,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   const ADMIN_PASSWORD = import.meta.env.ADMIN_PASSWORD;
 
+  console.log(ADMIN_PASSWORD, password);
+
   if (password === ADMIN_PASSWORD) {
     // Create a fake token (you should use JWT for real authentication)
     const fakeToken = "alqo29wy1mb";

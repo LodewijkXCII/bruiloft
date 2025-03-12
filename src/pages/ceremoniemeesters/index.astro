@@ -31,6 +31,12 @@ if (!rsvpWithGerechten) {
 }
 ---
 
+<script is:inline>
+  if (!localStorage.getItem("access-token")) {
+    window.location.replace("./login");
+  }
+</script>
+
 <Layout title="Aanmeldingen 👰">
   <section id="aanmeldpagina">
     <div class="card aanmelding">
