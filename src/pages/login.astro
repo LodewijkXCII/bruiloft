@@ -1,0 +1,49 @@
+---
+export const prerender = false;
+import LoginLayout from "../layouts/LoginLayout.astro";
+---
+
+<LoginLayout>
+  <section>
+    <div class="text">
+      <h1>Login</h1>
+      <form id="login-form">
+        <div class="input-wrapper">
+          <label for="password">Het zeer geheime wachtwoord!</label>
+          <input type="text" id="password" name="password" required />
+        </div>
+        <button class="btn btn-secondary" type="submit">Aanmelden</button>
+      </form>
+      <span id="responseMessage"></span>
+    </div>
+  </section>
+</LoginLayout>
+
+<script>
+  document
+    .getElementById("login-form")
+    .addEventListener("submit", async function (e) {
+      e.preventDefault();
+      submitform();
+    });
+
+  const password = document.getElementById("password").value;
+  const responseMessage = document.getElementById("responseMessage");
+
+  async function submitform() {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password }),
+    });
+
+    console.log(response);
+    if (!response.ok) throw new Error("Invalid credentials");
+
+    const data = await response.json();
+    localStorage.setItem("access-token", data.token); // Store token in localStorage
+    responseMessage.innerText = "Gelukt!";
+    window.location.href = "/ceremoniemeesters"; // Redirect to protected page
+  }
+  console.log(password);
+</script>

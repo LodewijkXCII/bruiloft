@@ -3,10 +3,8 @@ const { title, body } = Astro.props;
 ---
 
 <div class="info-card">
-  <h3 class="info-card__title oranje">{title}</h3>
-  <p class="info-card__body text-light" set:html={body} />
+  <h3 class="info-card__title">{title}</h3>
+  <p class="info-card__body" set:html={body} />
 </div>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

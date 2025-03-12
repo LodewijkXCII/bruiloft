@@ -5,10 +5,10 @@ const { title, time, text } = Astro.props;
 <div class="program-card">
   <div class="program-card--title">
     <div class="program-card--title__time">{time}</div>
-    <h3 class="program-card--title__text">{title}</h3>
+    <h3 class="program-card--title__text oranje">{title}</h3>
   </div>
   <div class="program-card--text">
-    <div class="program-card--text__body" set:html={text} />
+    <div class="program-card--text__body text-light" set:html={text} />
   </div>
 </div>
 
@@ -28,7 +28,7 @@ const { title, time, text } = Astro.props;
       align-items: center;
 
       &__time {
-        background-color: var(--clr-oranje);
+        background-color: var(--clr-paars);
         align-self: start;
         padding: 0.75rem;
         border-radius: 0.5rem;

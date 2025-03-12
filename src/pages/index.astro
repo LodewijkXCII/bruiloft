@@ -73,40 +73,6 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
       </div>
     </section>
 
-    <section id="aanmelden">
-      <div class="text">
-        <div class="block-title">
-          <h2 class="oranje">We horen graag of je erbij bent!</h2>
-          <p class="text-subtle paars">Vier met ons!</p>
-        </div>
-        <SigninForm client:load />
-      </div>
-    </section>
-
-    <section
-      id="thema"
-      class="backdrop"
-      style="background-image: url(/img/07e96e7fba74414bab1f5e7a37a62002.jpg);"
-    >
-      <div class="text backdrop-text">
-        <div class="block-title">
-          <h2>Dresscode</h2>
-          <p class="text-subtle oranje">Vier de vreugde!</p>
-        </div>
-        <p>
-          De dresscode is Colourful Chique. Qua kleur kan het niet gek genoeg.
-          Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
-          fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
-          kijkje op het inspiratiebord via onderstaande button!
-        </p>
-        <a
-          href="https://pin.it/1KDGLpjst"
-          class="btn btn-primary"
-          target="_blank">Bekijk het inspiratiebord</a
-        >
-      </div>
-    </section>
-
     <section id="locatie">
       <div class="card">
         <div class="card-text">
@@ -141,14 +107,38 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
       </div>
     </section>
 
+    <section
+      id="thema"
+      class="backdrop"
+      style="background-image: url(/img/07e96e7fba74414bab1f5e7a37a62002.jpg);"
+    >
+      <div class="text backdrop-text">
+        <div class="block-title">
+          <h2>Dresscode</h2>
+          <p class="text-subtle oranje">Vier de vreugde!</p>
+        </div>
+        <p>
+          De dresscode is Colourful Chique. Qua kleur kan het niet gek genoeg.
+          Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
+          fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
+          kijkje op het inspiratiebord via onderstaande button!
+        </p>
+        <a
+          href="https://pin.it/1KDGLpjst"
+          class="btn btn-primary"
+          target="_blank">Bekijk het inspiratiebord</a
+        >
+      </div>
+    </section>
+
     <section id="programma">
       <div class="text">
         <div class="block-title">
-          <h2>Programma</h2>
-          <p class="text-subtle oranje">Vier het geluk!</p>
+          <h2 class="oranje">Programma</h2>
+          <p class="text-subtle paars">Vier het geluk!</p>
         </div>
 
-        <p>
+        <p class="text-light">
           We nemen je graag mee in onze bruiloft bubbel van begin tot eind. We
           doen niet aan aparte dag- of avondgasten, iedereen is er de gehele dag
           bij!
@@ -168,7 +158,7 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
     <section id="faq">
       <div class="text">
         <div class="block-title">
-          <h2 class="oranje">Praktische informatie</h2>
+          <h2 class="roze">Praktische informatie</h2>
         </div>
         <FAQCard
           title="Vervoer"
@@ -184,8 +174,8 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
         />
 
         <div class="info-card">
-          <h3 class="info-card__title oranje">Slapen</h3>
-          <p class="info-card__body text-light">
+          <h3 class="info-card__title roze">Slapen</h3>
+          <p class="info-card__body">
             Een select gezelschap zal blijven slapen op de locatie. Check vooral
             even de <a href="/paklijst">paklijst</a>, zodat je niet ongelegen
             zit. Nog geen slaapplek? Er zijn meerdere opties voor
@@ -197,8 +187,8 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
         </div>
 
         <div class="info-card">
-          <h3 class="info-card__title oranje">Ontbijt</h3>
-          <div class="info-card__body text-light">
+          <h3 class="info-card__title roze">Ontbijt</h3>
+          <div class="info-card__body">
             <p>
               Het ontbijt zal plaatsvinden om 9:30 uur. Slaap je niet bij ons op
               de locatie, maar heb je wel besloten in de buurt te overnachten?
@@ -209,8 +199,8 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
           </div>
         </div>
         <div class="info-card">
-          <h3 class="info-card__title oranje">Cadeautip</h3>
-          <div class="info-card__body text-light">
+          <h3 class="info-card__title">Cadeautip</h3>
+          <div class="info-card__body">
             <Image src={Envelope} alt="" />
           </div>
         </div>
@@ -231,6 +221,15 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
           title="Planning"
           body="De ceremonie is een bijzonder moment wat we graag op tijd willen beginnen. We vragen jullie daarom op tijd te komen. Te laat zijn, zou zonde zijn van dit speciale moment."
         />
+      </div>
+    </section>
+    <section id="aanmelden">
+      <div class="text">
+        <div class="block-title">
+          <h2 class="oranje">We horen graag of je erbij bent!</h2>
+          <p class="text-subtle paars">Vier met ons!</p>
+        </div>
+        <SigninForm client:load />
       </div>
     </section>
 
