@@ -10,6 +10,7 @@ async function submit(e: Event) {
 
   const formData = new FormData(e.currentTarget as HTMLFormElement);
 
+  console.log(formData);
   const response = await fetch("/api/aanmelding", {
     method: "POST",
     body: formData,
@@ -62,8 +63,8 @@ const count = ref(1);
         <label :for="`ontbijt${n}`">Ontbijt <span v-if="n==1">je</span><span v-else>je partner</span> mee?</label>
         <select :name="`ontbijt${n}`" :id="`ontbijt${n}`" >
            <option value="select" disabled selected>Selecteer...</option>
-        <option value="true">Absoluut!</option>
-        <option value="false">Helaas, ik kan niet.</option>
+        <option value="1">Absoluut!</option>
+        <option value="0">Helaas, ik kan niet.</option>
         </select>
       </div>
     </div>

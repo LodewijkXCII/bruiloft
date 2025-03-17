@@ -5,6 +5,15 @@ import Layout from "../../layouts/Layout.astro";
 import { db, count, RSVP, GERECHT, eq, desc } from "astro:db";
 
 const gerechtData = await db.select().from(GERECHT);
+
+let ontbijters = 0;
+
+for (let i = 0; i < gerechtData.length; i++) {
+  if (gerechtData[i].ontbijt) {
+    ontbijters++;
+  }
+}
+
 const countGerechten = await db
   .select({
     keuze: GERECHT.keuze,
@@ -20,6 +29,8 @@ const rsvpData = await db
   .where(eq(RSVP.rsvp, "ja"))
   .groupBy(RSVP.id)
   .orderBy(RSVP.created_at);
+
+console.log(rsvpData);
 
 const rsvpWithGerechten = rsvpData.map((rsvp) => ({
   ...rsvp,
@@ -76,52 +87,59 @@ if (!rsvpWithGerechten) {
                 ))}
               </ul>
             </div>
-            <div class="aanmelding-card--secInfo">
-              <p>Muziekkeuze: {aanmelding.muziek}</p>
-              <p>Opmerkingen: {aanmelding.comment}</p>
-            </div>
           </div>
         ))
       }
     </div>
   </section>
+  <section>
+    <h2 class="oranje">Alle reacties van alle gasten!</h2>
+    {
+      rsvpWithGerechten.map((aanmelding) => (
+        <h3>{aanmelding.name}</h3>
+            <p>Muziekkeuze: <strong>{aanmelding.muziek}</strong></p>
+            <p>Opmerkingen: <strong>{aanmelding.comment}</strong></p>
+        
+      ))
+    }
+  </section>
+
+  <style>
+    .aanmelding-count {
+      grid-column: 1/-1;
+    }
+    .aanmelding {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+      gap: 1rem;
+      padding: 0;
+    }
+    .aanmelding-card {
+      padding: 1rem;
+      background: rgba(var(--rgb-roze), 1);
+      border-radius: 5px;
+      color: var(--clr-text-light);
+    }
+
+    h3 {
+      color: var(--clr-oranje);
+    }
+
+    .aanmelding-card:hover {
+      /* cursor: pointer; */
+      transform: scale(1.05);
+      transition: transform 500ms ease-in;
+    }
+
+    .aanmelding-card--mainInfo {
+      /* display: none; */
+    }
+    .aanmelding-card--secInfo {
+      display: none;
+    }
+
+    #aanmeldpagina, section {
+      clip-path: polygon(0 75px, 100% 0%, 100% calc(100% - 75px), 0 100%);
+    }
+  </style>
 </Layout>
-
-<style>
-  .aanmelding-count {
-    grid-column: 1/-1;
-  }
-  .aanmelding {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-  .aanmelding-card {
-    padding: 1rem;
-    background: rgba(var(--rgb-roze), 1);
-    border-radius: 5px;
-    color: var(--clr-text-light);
-  }
-
-  h3 {
-    color: var(--clr-oranje);
-  }
-
-  .aanmelding-card:hover {
-    /* cursor: pointer; */
-    transform: scale(1.05);
-    transition: transform 500ms ease-in;
-  }
-
-  .aanmelding-card--mainInfo {
-    /* display: none; */
-  }
-  .aanmelding-card--secInfo {
-    display: none;
-  }
-
-  #aanmeldpagina {
-    clip-path: polygon(0 75px, 100% 0%, 100% calc(100% - 75px), 0 100%);
-  }
-</style>
