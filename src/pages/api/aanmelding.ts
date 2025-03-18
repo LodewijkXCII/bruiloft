@@ -17,7 +17,9 @@ export const POST: APIRoute = async ({ request }) => {
   const gerecht2 = data.get("gerecht2");
   const ontbijt2 = data.get("ontbijt2");
 
-  console.log(Boolean(ontbijt1), Boolean(ontbijt2));
+  const ontbijtKeuze1 = ontbijt1 == 0 ? false : true;
+  const ontbijtKeuze2 = ontbijt2 == 0 ? false : true;
+
   const body = {
     name,
     email,
@@ -44,7 +46,7 @@ export const POST: APIRoute = async ({ request }) => {
   const gerechten_body = [
     {
       keuze: gerecht1,
-      ontbijt: Boolean(ontbijt1),
+      ontbijt: ontbijtKeuze1,
       rsvp_id: insertID[0].id,
     },
   ];
@@ -52,7 +54,7 @@ export const POST: APIRoute = async ({ request }) => {
   if (gerecht2) {
     gerechten_body.push({
       keuze: gerecht2,
-      ontbijt: Boolean(ontbijt2),
+      ontbijt: ontbijtKeuze2,
       rsvp_id: insertID[0].id,
     });
   }
