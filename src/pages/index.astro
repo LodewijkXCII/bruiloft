@@ -34,238 +34,260 @@ programEvents.sort((a, b) => a.data.position - b.data.position);
       </div>
     </header>
 
-    <section id="informatie">
-      <Countdown />
-      <div class="card">
-        <div class="card-text">
-          <div class="card-heading">
-            <h2>Informatie</h2>
-            <p class="text-subtle oranje">Vier de liefde!</p>
-          </div>
-          <div class="card-body">
-            <p>
-              We kijken er naar uit om onze grote dag met jullie te vieren in
-              het mooie Friesland. Onze website is je go-to voor alle nodige
-              informatie, details, het programma, dresscode, RSVP etcetera.
-            </p>
-            <p>
-              We kunnen niet wachten om deze fantastische dag met jullie te
-              beleven en mooie herinneringen te maken!
-            </p>
-            <p>Liefs,</p>
-            <p class="roze text-heading">Loek & Nicolien</p>
-          </div>
-          <div class="card-footer">
-            <p>Meer informatie over:</p>
-            <ul>
-              <li><a href="#aanmelden">Aanmelden</a></li>
-              <li><a href="#thema">Dresscode</a></li>
-              <li><a href="#locatie">Locatie</a></li>
-              <li><a href="#programma">Programma</a></li>
-              <li><a href="#faq">Praktische informatie</a></li>
-              <li><a href="#ceremonie">Ceremoniemeesters</a></li>
-            </ul>
-          </div>
+    <section id="podcast">
+      <div class="text">
+        <div class="block-title">
+          <h2 class="roze">Podcast</h2>
+          <p class="text-subtle oranje">Luister lekker mee!</p>
         </div>
-        <div class="card-image">
-          <Image src={WeddingImg} alt="" />
-        </div>
-      </div>
-    </section>
 
-    <section id="locatie">
-      <div class="card">
-        <div class="card-text">
+        <p >
+          We hebben in het grote geheim een podcast opgenomen ter voorbereiding
+          van het grote feest. In bijna drie kwartier praten we jullie helemaal
+          bij met betrekking tot de locatie, de gasten en wat je allemaal kan
+          verwachten deze dag. Luister dus snel de podcast via onderstaande
+          link.
+        </p>
+        <a href="/podcast" class="btn btn-primary"> Beluister de podcast </a>
+      </div>
+      </section>  
+      <section>
+        <Countdown />
+      </section>
+      <section id="informatie">
+        <div class="card">
+          <div class="card-text">
+            <div class="card-heading">
+              <h2>Informatie</h2>
+              <p class="text-subtle oranje">Vier de liefde!</p>
+            </div>
+            <div class="card-body">
+              <p>
+                We kijken er naar uit om onze grote dag met jullie te vieren in
+                het mooie Friesland. Onze website is je go-to voor alle nodige
+                informatie, details, het programma, dresscode, RSVP etcetera.
+              </p>
+              <p>
+                We kunnen niet wachten om deze fantastische dag met jullie te
+                beleven en mooie herinneringen te maken!
+              </p>
+              <p>Liefs,</p>
+              <p class="roze text-heading">Loek & Nicolien</p>
+            </div>
+            <div class="card-footer">
+              <p>Meer informatie over:</p>
+              <ul>
+                <li><a href="#aanmelden">Aanmelden</a></li>
+                <li><a href="#thema">Dresscode</a></li>
+                <li><a href="#locatie">Locatie</a></li>
+                <li><a href="#programma">Programma</a></li>
+                <li><a href="#faq">Praktische informatie</a></li>
+                <li><a href="#ceremonie">Ceremoniemeesters</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-image">
+            <Image src={WeddingImg} alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section id="locatie">
+        <div class="card">
+          <div class="card-text">
+            <div class="block-title">
+              <h2 class="oranje">Locatie</h2>
+              <p class="text-subtle paars">Vier het samenzijn!</p>
+            </div>
+            <p class="text-light">
+              Onze bruiloft zal plaatsvinden in een klein dorpje in Friesland,
+              namelijk: Elahuizen. Wie kent het niet! In een
+              zeilschoolaccommodatie gaat het allemaal plaatsvinden.
+            </p>
+            <p class="text-light">
+              Uiteraard niet zo maar een zeilschool, maar de zeilschool waar
+              Nico jaren heeft rondgelopen en menig uur heeft doorgebracht. Een
+              plek waar alles mogelijk is.
+            </p>
+            <p class="text-light">
+              Wat ons de mogelijkheid geeft het precies te doen zoals we willen!
+              Een beetje back to basic met een feestelijke touch.
+            </p>
+            <p class="text-light">
+              <a href="https://g.co/kgs/ifF2C5H" target="_blank">
+                Mardyk 21<br />
+                8581KG Elahuizen
+              </a>
+            </p>
+          </div>
+          <div class="card-image">
+            <Image src={Locatie} alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="thema"
+        class="backdrop"
+        style="background-image: url(/img/07e96e7fba74414bab1f5e7a37a62002.jpg);"
+      >
+        <div class="text backdrop-text">
           <div class="block-title">
-            <h2 class="oranje">Locatie</h2>
-            <p class="text-subtle paars">Vier het samenzijn!</p>
+            <h2>Dresscode</h2>
+            <p class="text-subtle oranje">Vier de vreugde!</p>
           </div>
+          <p>
+            De dresscode is Colourful Chique. Qua kleur kan het niet gek genoeg.
+            Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
+            fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
+            kijkje op het inspiratiebord via onderstaande button!
+          </p>
+          <a
+            href="https://pin.it/1KDGLpjst"
+            class="btn btn-primary"
+            target="_blank">Bekijk het inspiratiebord</a
+          >
+        </div>
+      </section>
+
+      <section id="programma">
+        <div class="text">
+          <div class="block-title">
+            <h2 class="oranje">Programma</h2>
+            <p class="text-subtle paars">Vier het geluk!</p>
+          </div>
+
           <p class="text-light">
-            Onze bruiloft zal plaatsvinden in een klein dorpje in Friesland,
-            namelijk: Elahuizen. Wie kent het niet! In een
-            zeilschoolaccommodatie gaat het allemaal plaatsvinden.
+            We nemen je graag mee in onze bruiloft bubbel van begin tot eind. We
+            doen niet aan aparte dag- of avondgasten, iedereen is er de gehele
+            dag bij!
           </p>
-          <p class="text-light">
-            Uiteraard niet zo maar een zeilschool, maar de zeilschool waar Nico
-            jaren heeft rondgelopen en menig uur heeft doorgebracht. Een plek
-            waar alles mogelijk is.
-          </p>
-          <p class="text-light">
-            Wat ons de mogelijkheid geeft het precies te doen zoals we willen!
-            Een beetje back to basic met een feestelijke touch.
-          </p>
-          <p class="text-light">
-            <a href="https://g.co/kgs/ifF2C5H" target="_blank">
-              Mardyk 21<br />
-              8581KG Elahuizen
-            </a>
-          </p>
+          <br />
+          {
+            programEvents.map(({ data, rendered }) => (
+              <ProgramCard
+                time={data.time}
+                title={data.title}
+                text={rendered.html}
+              />
+            ))
+          }
         </div>
-        <div class="card-image">
-          <Image src={Locatie} alt="" />
-        </div>
-      </div>
-    </section>
+      </section>
+      <section id="faq">
+        <div class="text">
+          <div class="block-title">
+            <h2 class="roze">Praktische informatie</h2>
+          </div>
+          <FAQCard
+            title="Vervoer"
+            body="Met het OV is het 2 treinen, 3 bussen en 4,5 uur later vanaf Rotterdam Centraal. We raden je van harte aan om met de auto te komen of met iemand mee te rijden."
+          />
+          <FAQCard
+            title="Parkeren"
+            body="Precies voor de locatie ligt een groot parkeerterrein met gratis en voldoende parkeergelegenheid. Probeer niet te diep in te ademen als je je auto uitstapt. De klap van het boerenland komt al gauw op je af."
+          />
+          <FAQCard
+            title="Speeches"
+            body="Wij vinden speeches en ludieke acties super leuk, maar de dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeesters. Contactgegevens staan onderaan deze pagina."
+          />
 
-    <section
-      id="thema"
-      class="backdrop"
-      style="background-image: url(/img/07e96e7fba74414bab1f5e7a37a62002.jpg);"
-    >
-      <div class="text backdrop-text">
-        <div class="block-title">
-          <h2>Dresscode</h2>
-          <p class="text-subtle oranje">Vier de vreugde!</p>
-        </div>
-        <p>
-          De dresscode is Colourful Chique. Qua kleur kan het niet gek genoeg.
-          Lang, kort, jurk, pak, broek, rok alles kan! Zo lang je je er
-          fantastisch in voelt en het kleur bevat. Geen inspiratie? Neem een
-          kijkje op het inspiratiebord via onderstaande button!
-        </p>
-        <a
-          href="https://pin.it/1KDGLpjst"
-          class="btn btn-primary"
-          target="_blank">Bekijk het inspiratiebord</a
-        >
-      </div>
-    </section>
-
-    <section id="programma">
-      <div class="text">
-        <div class="block-title">
-          <h2 class="oranje">Programma</h2>
-          <p class="text-subtle paars">Vier het geluk!</p>
-        </div>
-
-        <p class="text-light">
-          We nemen je graag mee in onze bruiloft bubbel van begin tot eind. We
-          doen niet aan aparte dag- of avondgasten, iedereen is er de gehele dag
-          bij!
-        </p>
-        <br />
-        {
-          programEvents.map(({ data, rendered }) => (
-            <ProgramCard
-              time={data.time}
-              title={data.title}
-              text={rendered.html}
-            />
-          ))
-        }
-      </div>
-    </section>
-    <section id="faq">
-      <div class="text">
-        <div class="block-title">
-          <h2 class="roze">Praktische informatie</h2>
-        </div>
-        <FAQCard
-          title="Vervoer"
-          body="Met het OV is het 2 treinen, 3 bussen en 4,5 uur later vanaf Rotterdam Centraal. We raden je van harte aan om met de auto te komen of met iemand mee te rijden."
-        />
-        <FAQCard
-          title="Parkeren"
-          body="Precies voor de locatie ligt een groot parkeerterrein met gratis en voldoende parkeergelegenheid. Probeer niet te diep in te ademen als je je auto uitstapt. De klap van het boerenland komt al gauw op je af."
-        />
-        <FAQCard
-          title="Speeches"
-          body="Wij vinden speeches en ludieke acties super leuk, maar de dag zit vol met bijzondere en leuke momenten, dus overleg even met de ceremoniemeesters. Contactgegevens staan onderaan deze pagina."
-        />
-
-        <div class="info-card">
-          <h3 class="info-card__title roze">Slapen</h3>
-          <p class="info-card__body">
-            Een select gezelschap zal blijven slapen op de locatie. Check vooral
-            even de <a href="/paklijst">paklijst</a>, zodat je niet ongelegen
-            zit. Nog geen slaapplek? Er zijn meerdere opties voor
-            vakantiehuisjes en hotels in de buurt. Met de caravan of camper?
-            Camping in de buurt: Mini camping Pressefinne. Dit is 1,5 km van de
-            bruiloftlocatie. Op de parkeerplaats staan is ook een optie. Op
-            eigen risico. Dit is zonder elektra.
-          </p>
-        </div>
-
-        <div class="info-card">
-          <h3 class="info-card__title roze">Ontbijt</h3>
-          <div class="info-card__body">
-            <p>
-              Het ontbijt zal plaatsvinden om 9:30 uur. Slaap je niet bij ons op
-              de locatie, maar heb je wel besloten in de buurt te overnachten?
-              Je bent van harte uitgenogigd om mee te ontbijten. Laat het vooral
-              weten tijdens de <a href="/#aanmelden">aanmelding</a>, zodat we
-              daar rekening mee kunnen houden.
+          <div class="info-card">
+            <h3 class="info-card__title roze">Slapen</h3>
+            <p class="info-card__body">
+              Een select gezelschap zal blijven slapen op de locatie. Check
+              vooral even de <a href="/paklijst">paklijst</a>, zodat je niet
+              ongelegen zit. Nog geen slaapplek? Er zijn meerdere opties voor
+              vakantiehuisjes en hotels in de buurt. Met de caravan of camper?
+              Camping in de buurt: Mini camping Pressefinne. Dit is 1,5 km van
+              de bruiloftlocatie. Op de parkeerplaats staan is ook een optie. Op
+              eigen risico. Dit is zonder elektra.
             </p>
           </div>
+
+          <div class="info-card">
+            <h3 class="info-card__title roze">Ontbijt</h3>
+            <div class="info-card__body">
+              <p>
+                Het ontbijt zal plaatsvinden om 9:30 uur. Slaap je niet bij ons
+                op de locatie, maar heb je wel besloten in de buurt te
+                overnachten? Je bent van harte uitgenogigd om mee te ontbijten.
+                Laat het vooral weten tijdens de <a href="/#aanmelden"
+                  >aanmelding</a
+                >, zodat we daar rekening mee kunnen houden.
+              </p>
+            </div>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card__title">Cadeautip</h3>
+            <div class="info-card__body">
+              <Image src={Envelope} alt="" />
+            </div>
+          </div>
+
+          <FAQCard
+            title="Foto's"
+            body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken. Nog beter, laat je telefoon gerust in je tas."
+          />
+          <FAQCard
+            title="Plus one"
+            body="We willen onze bruiloft zo intiem mogelijk houden. De namen die op de envelop staan zijn uitgenodigd."
+          />
+          <FAQCard
+            title="Kinderen"
+            body="Hoe veel we ook van kinderen houden. Hebben we er toch van gekozen om onze bruiloft zonder kinderen te laten plaatsvinden. We hopen op jullie begrip en kijken er naar uit om samen met jullie een ontspannen en feestelijke dag te beleven."
+          />
+          <FAQCard
+            title="Planning"
+            body="De ceremonie is een bijzonder moment wat we graag op tijd willen beginnen. We vragen jullie daarom op tijd te komen. Te laat zijn, zou zonde zijn van dit speciale moment."
+          />
         </div>
-        <div class="info-card">
-          <h3 class="info-card__title">Cadeautip</h3>
-          <div class="info-card__body">
-            <Image src={Envelope} alt="" />
+      </section>
+      <section id="aanmelden">
+        <div class="text">
+          <div class="block-title">
+            <h2 class="oranje">We horen graag of je erbij bent!</h2>
+            <p class="text-subtle paars">Vier met ons!</p>
+          </div>
+          <SigninForm client:load />
+        </div>
+      </section>
+
+      <section
+        id="ceremonie"
+        class="backdrop"
+        style="background-image: url(/img/lolasevents-colorful-tafelstyling.jpg);"
+      >
+        <div class="text backdrop-text">
+          <div class="block-title">
+            <h2 class="paars">Ceremoniemeesters</h2>
+            <p class="text-subtle oranje">Vier de vreugde!</p>
+          </div>
+          <p class="">
+            Om alles op onze grote dag in goede banen te laten lopen hebben we
+            twee ceremoniemeesters gevraagd. Zij zullen het aanspreekpunt zijn
+            van de dag. Mocht je iets van tevoren willen weten, vraag het aan
+            hen.
+          </p>
+
+          <div class="ceremoniemeesters">
+            <div class="person">
+              <h3 class="oranje">Danique Touw</h3>
+              <p>06-23084445</p>
+              <a href="mailto:bruiloftloekennicolien@gmail.com"
+                >bruiloftloekennicolien@gmail.com
+              </a>
+            </div>
+            <div class="person">
+              <h3 class="oranje">Art van Eeden Petersman</h3>
+              <p>06-186767622</p>
+              <a href="mailto:bruiloftloekennicolien@gmail.com"
+                >bruiloftloekennicolien@gmail.com
+              </a>
+            </div>
           </div>
         </div>
-
-        <FAQCard
-          title="Foto's"
-          body="Tijdens de gehele bruiloft zal er een fantastische fotograaf rondlopen. Zij zal alles vastleggen voor ons. We vragen je om vooral tijdens de ceremonie en andere gezamenlijke momenten geen foto’s te maken. Nog beter, laat je telefoon gerust in je tas."
-        />
-        <FAQCard
-          title="Plus one"
-          body="We willen onze bruiloft zo intiem mogelijk houden. De namen die op de envelop staan zijn uitgenodigd."
-        />
-        <FAQCard
-          title="Kinderen"
-          body="Hoe veel we ook van kinderen houden. Hebben we er toch van gekozen om onze bruiloft zonder kinderen te laten plaatsvinden. We hopen op jullie begrip en kijken er naar uit om samen met jullie een ontspannen en feestelijke dag te beleven."
-        />
-        <FAQCard
-          title="Planning"
-          body="De ceremonie is een bijzonder moment wat we graag op tijd willen beginnen. We vragen jullie daarom op tijd te komen. Te laat zijn, zou zonde zijn van dit speciale moment."
-        />
-      </div>
-    </section>
-    <section id="aanmelden">
-      <div class="text">
-        <div class="block-title">
-          <h2 class="oranje">We horen graag of je erbij bent!</h2>
-          <p class="text-subtle paars">Vier met ons!</p>
-        </div>
-        <SigninForm client:load />
-      </div>
-    </section>
-
-    <section
-      id="ceremonie"
-      class="backdrop"
-      style="background-image: url(/img/lolasevents-colorful-tafelstyling.jpg);"
-    >
-      <div class="text backdrop-text">
-        <div class="block-title">
-          <h2 class="paars">Ceremoniemeesters</h2>
-          <p class="text-subtle oranje">Vier de vreugde!</p>
-        </div>
-        <p class="">
-          Om alles op onze grote dag in goede banen te laten lopen hebben we
-          twee ceremoniemeesters gevraagd. Zij zullen het aanspreekpunt zijn van
-          de dag. Mocht je iets van tevoren willen weten, vraag het aan hen.
-        </p>
-
-        <div class="ceremoniemeesters">
-          <div class="person">
-            <h3 class="oranje">Danique Touw</h3>
-            <p>06-23084445</p>
-            <a href="mailto:bruiloftloekennicolien@gmail.com"
-              >bruiloftloekennicolien@gmail.com
-            </a>
-          </div>
-          <div class="person">
-            <h3 class="oranje">Art van Eeden Petersman</h3>
-            <p>06-186767622</p>
-            <a href="mailto:bruiloftloekennicolien@gmail.com"
-              >bruiloftloekennicolien@gmail.com
-            </a>
-          </div>
-        </div>
-      </div>
+      </section>
     </section>
   </main>
 </Layout>
