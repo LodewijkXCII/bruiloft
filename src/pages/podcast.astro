@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const podcastEpisode = {
+  title: "Bruilofpraat - Loek en Nicolien",
+  url: "/podcast/Bruiloftpraat.mp3", // Replace with your actual podcast URL
+};
+---
+
+<Layout title="Podcast - Bruiloft Loek en Nicolien">
+  <main>
+    <section id="podcast">
+      <div class="text text-light">
+        <div class="block-title">
+          <h2 class="roze">Podcast</h2>
+          <p class="text-subtle oranje">Voor tijdens de rit naar Friesland.</p>
+        </div>
+
+        <p>
+          Zit je in de auto richting het grote feest van Loek & Nicolien? Dan
+          hebben we iets leuks voor je! Speciaal voor jullie hebben we een
+          gezellige podcast opgenomen om de rit wat korter (en leuker!) te
+          maken. In deze podcast hoor je leuke anekdotes, een muzikale sneak
+          peek en een paar interessante verhalen...
+        </p>
+        <p>
+          Klik hieronder om de podcast te starten, zet je volume aan, en laat je
+          alvast meenemen in de sfeer van de dag. Veel luisterplezier en tot
+          straks op de dansvloer!
+        </p>
+        <br />
+        <audio src={podcastEpisode.url} controls></audio>
+      </div>
+    </section>
+  </main>
+</Layout>
